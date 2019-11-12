@@ -1,0 +1,5 @@
+struct phone{
+  nat num;
+  string name;
+  nat compt;
+};
