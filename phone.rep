@@ -1,5 +1,4 @@
-struct tphone{
-  nat num;
-  string name;
-  nat compt;
-};
+nat num;
+string name;
+nat compt;
+

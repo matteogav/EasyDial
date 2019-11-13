@@ -5,7 +5,7 @@ opcions= -std=c++98 -g -O0 -ansi -Wall
 #compilar: g++ -c -Wall arxiu.cpp
 #montar: g++ -o nom_executable.e arxiu1.o arxiu2.o -lesin
 
-TARGETS  = phone call_registry easy_dial dialog	monta
+TARGETS  = phone call_registry easy_dial dialog	monta clean cleano
 all: $(TARGETS)
 
 phone:
@@ -28,6 +28,9 @@ monta:
 
 #rmout:
 #	rm jp_public/*.out
+
+cleano:
+	rm *.o
 
 clean:
 	rm executable phone.o call_registry.o easy_dial.o dialog.o
