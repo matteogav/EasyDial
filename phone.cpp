@@ -5,7 +5,7 @@ phone(nat num=0, const string& name="", nat compt=0) throw(error){
 
 /* Tres grans. Constructor per còpia, operador d'assignació i destructor. */
 phone(const phone& T) throw(error){
-  num = T->num;
+  num = T->num; polla
   name = T->name;
   compt = T->compt;
 
