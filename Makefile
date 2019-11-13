@@ -1,6 +1,6 @@
 CC = g++ -c
 CO= g++ -o
-opcions= -std=-Wall
+opcions= -std=c++98 -g -O0 -ansi -Wall
 
 #compilar: g++ -c -Wall arxiu.cpp
 #montar: g++ -o nom_executable.e arxiu1.o arxiu2.o -lesin
