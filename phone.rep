@@ -1,4 +1,4 @@
-struct phone{
+struct telf{
   nat num;
   string name;
   nat compt;
