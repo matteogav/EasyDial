@@ -1,4 +1,4 @@
-nat num;
-string name;
-nat compt;
+nat telf;
+string contacte;
+nat freq;
 
