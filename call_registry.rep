@@ -1,0 +1,15 @@
+
+enum Estat {lliure, ocupat, esborrat};
+struct node_hash {
+	phone _phone;
+	Estat _est;
+};
+
+node_hash *_taula;
+nat _quants;
+nat _mida;
+
+nat hash(nat x) const;		//funcio de hash
+void rehash();
+nat consulta(nat num) const;
+void afegir(phone p);

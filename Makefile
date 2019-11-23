@@ -26,6 +26,10 @@ dialog:
 	$(CC) $(opcions) dialog.cpp
 
 monta:
+	$(CC) $(opcions) phone.cpp
+	$(CC) $(opcions) call_registry.cpp
+	$(CC) $(opcions) easy_dial.cpp
+	$(CC) $(opcions) dialog.cpp
 	$(CO) executable phone.o call_registry.o easy_dial.o dialog.o -lesin
 
 #comprova:
