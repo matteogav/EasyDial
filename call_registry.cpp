@@ -2,80 +2,90 @@
 #include <vector>
 
 nat call_registry::hash(nat x) const{
-	long y = ((x * x * 31415926) >> 4)%_mida;
 
+	long y = ((x * x * 31415926) >> 4)%_mida;
 	return y;
+
 }
 
 void call_registry::rehash(){
 
 }
 
-nat call_registry::consulta(nat num) const{
-	nat i = hash(num);
-	nat prilliure = -1, cont = 0;
-
-	while ((_taula[i]._phone).numero() != num and _taula[i]._est != lliure and cont < _mida){
-		++cont;
-		if (_taula[i]._est == esborrat and prilliure == -1) prilliure = i;
-		i = (i+1)%_mida;
-	}
-	if (_taula[i]._est == lliure and (_taula[i]._phone).numero() != num){
-		if (prilliure != -1) i = prilliure;
-	}
-	
-	return i;
-}
-
 void call_registry::afegir(phone p){
-	nat i = consulta(p.numero());
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() != p.numero()) rehash();
-	if (_taula[i]._est != ocupat) ++_quants;
+  if(factor_carrega(_mida, _n_elements+1) > 0.75) rehash();
 
-	_taula[i]._phone = p;
-	_taula[i]._est = ocupat;
+  int i = hash(p.numero());
+  node_hash* aux = _taula[i];
+  bool trobat = false;
+  while(aux != NULL and not trobat){
+    if(aux->_phone.numero() == num) trobat = true;
+    else aux = aux->_seg;
+  }
+
+  if(not trobat){
+    _taula[i] = new node_hash(p, _taula[i]);
+    ++_mida;
+  }
 }
 
 call_registry::call_registry() throw(error){
+
 	_mida = 10;
-	_taula = new node_hash [_mida];
-	_quants = 0;
+  _n_elements = 0;
+	_taula = new node_hash*[_mida];
+  for(int i=0; i<_mida ; ++i) _taula[i] = NULL;
 }
 
 /* Constructor per còpia, operador d'assignació i destructor. */
 call_registry::call_registry(const call_registry& R) throw(error){
 
+  _mida = R->_mida;
+  _n_elements = _n_elements;
+  for(int i=0; i < R->_mida; ++i){
+    _taula[i] = R->_taula[i];
+  }
 }
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
-
+  if(this != R){
+    _mida = R->_mida;
+    _n_elements = _n_elements;
+    for(int i=0; i < R->_mida; ++i){
+      _taula[i] = R->_taula[i];
+    }
+  }
+  return *this;
 }
 call_registry::~call_registry() throw(){
 
 }
 
 void call_registry::registra_trucada(nat num) throw(error){
-	nat i = consulta(num);
+	nat i = hash(num);
+  node_hash* aux = _taula[i];
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num) (_taula[i]._phone)++;
-	else {
+	if (aux->_phone.numero() == num) ++(_taula[i]->_phone);
+	else if (aux == NULL){
 		phone nou(num, "", 1);
-		if (_quants < _mida) afegir(nou);
-		else rehash();
+		afegir(nou);
 	}
+  else{
+    aux = aux->_seg;
+  }
 }
 
-void call_registry::assigna_nom(nat num, const string& name) throw(error){	
-	nat i = consulta(num);
+void call_registry::assigna_nom(nat num, const string& name) throw(error){
+	nat i = hash(num);
+  node_hash* aux = _taula[i];
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num){
+	if (aux->_phone.numero() == num){
 		phone modificat(num, name, (_taula[i]._phone).frequencia());
 		(_taula[i]._phone) = modificat;
 	}
 	else {
 		phone nou(num, name, 0);
-		if (_quants < _mida) afegir(nou);
-		else rehash();
+		afegir(nou);
 	}
 }
 
@@ -87,31 +97,49 @@ void call_registry::elimina(nat num) throw(error){
 }
 
 bool call_registry::conte(nat num) const throw(){
-	nat i = consulta(num);
-	bool res;
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num) res = true;
-	else res = false;
+	nat i = hash(num);
+  node_hash* aux = _taula[i];
+	bool res = false;
 
+  while(aux != NULL and not res){
+    if (_taula[i]->_phone.numero() == num) res = true;
+    else aux = aux->_seg;
+  }
 	return res;
 }
 
 string call_registry::nom(nat num) const throw(error){
-	nat i = consulta(num);
+	nat i = hash(num);
+  node_hash* aux = _taula[i];
+  bool b = false;
 	string res;
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num) res = (_taula[i]._phone).nom();
-	else throw(ErrNumeroInexistent);
+  while(aux != NULL and not b){
+    if (_taula[i]->_phone.numero() == num){
+      res = _taula[i]->_phone.nom();
+      b = true;
+    }
+    else aux = aux->_seg;
+  }
 
+  if(not b) throw(ErrNumeroInexistent);
 	return res;
 }
 
 nat call_registry::num_trucades(nat num) const throw(error){
-	nat i = consulta(num), res;
+	nat i = hash(num);
+  nat res;
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num) res = (_taula[i]._phone).frequencia();
-	else throw(ErrNumeroInexistent);
+  while(aux != NULL and not b){
+    if (_taula[i]->_phone.numero() == num){
+      res = _taula[i]->_phone.frequencia();
+      b = true;  
+    }
+    else aux = aux->_seg;
+  }
 
+	if(not b) throw(ErrNumeroInexistent);
 	return res;
 }
 

@@ -3,10 +3,9 @@
 
 #include "phone.hpp"
 #include <esin/error>
-#include <esin/util>   
+#include <esin/util>
 #include <string>
 #include <vector>
-
 using namespace std;
 using util::nat;
 
@@ -21,16 +20,16 @@ public:
   call_registry& operator=(const call_registry& R) throw(error);
   ~call_registry() throw();
 
-  /* Registra que s'ha realitzat una trucada al número donat, 
-  incrementant en 1 el comptador de trucades associat. Si el número no 
-  estava prèviament en el call_registry afegeix una nova entrada amb 
+  /* Registra que s'ha realitzat una trucada al número donat,
+  incrementant en 1 el comptador de trucades associat. Si el número no
+  estava prèviament en el call_registry afegeix una nova entrada amb
   el número de telèfon donat, l'string buit com a nom i el comptador a 1. */
   void registra_trucada(nat num) throw(error);
 
  /* Assigna el nom indicat al número donat.
   Si el número no estava prèviament en el call_registry, s'afegeix
-  una nova entrada amb el número i nom donats, i el comptador 
-  de trucades a 0. 
+  una nova entrada amb el número i nom donats, i el comptador
+  de trucades a 0.
   Si el número existia prèviament, se li assigna el nom donat. */
   void assigna_nom(nat num, const string& name) throw(error);
 
@@ -38,7 +37,7 @@ public:
   Es produeix un error si el número no estava present. */
   void elimina(nat num) throw(error);
 
-  /* Retorna cert si i només si el call_registry conté un 
+  /* Retorna cert si i només si el call_registry conté un
   telèfon amb el número donat. */
   bool conte(nat num) const throw();
 
@@ -48,9 +47,9 @@ public:
   el call_registry. */
   string nom(nat num) const throw(error);
 
-  /* Retorna el comptador de trucades associat al número de telèfon 
+  /* Retorna el comptador de trucades associat al número de telèfon
   indicat. Aquest número pot ser 0 si no s'ha efectuat cap trucada a
-  aquest número. Es produeix un error si el número no està en el 
+  aquest número. Es produeix un error si el número no està en el
   call_registry. */
   nat num_trucades(nat num) const throw(error);
 
@@ -62,7 +61,7 @@ public:
 
   /* Fa un bolcat de totes les entrades que tenen associat un
   nom no nul sobre un vector de phone.
-  Comprova que tots els noms dels telèfons siguin diferents; 
+  Comprova que tots els noms dels telèfons siguin diferents;
   es produeix un error en cas contrari. */
   void dump(vector<phone>& V) const throw(error);
 
