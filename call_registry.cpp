@@ -49,10 +49,10 @@ call_registry::call_registry(const call_registry& R) throw(error){
 }
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
   if(this != R){
-    _mida = R->_mida;
+    _mida = R._mida;
     _n_elements = _n_elements;
-    for(int i=0; i < R->_mida; ++i){
-      _taula[i] = R->_taula[i];
+    for(int i=0; i < R._mida; ++i){
+      _taula[i] = R._taula[i];
     }
   }
   return *this;
@@ -90,10 +90,9 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 }
 
 void call_registry::elimina(nat num) throw(error){
-	nat i = consulta(num);
+	nat i = hash(num);
 
-	if (_taula[i]._est == ocupat and (_taula[i]._phone).numero() == num) _taula[i]._est = esborrat;
-	else throw(ErrNumeroInexistent);
+	throw(ErrNumeroInexistent);
 }
 
 bool call_registry::conte(nat num) const throw(){
@@ -134,7 +133,7 @@ nat call_registry::num_trucades(nat num) const throw(error){
   while(aux != NULL and not b){
     if (_taula[i]->_phone.numero() == num){
       res = _taula[i]->_phone.frequencia();
-      b = true;  
+      b = true;
     }
     else aux = aux->_seg;
   }
