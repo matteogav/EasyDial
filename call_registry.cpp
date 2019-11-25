@@ -43,9 +43,9 @@ call_registry::call_registry(const call_registry& R) throw(error){
 
   _mida = R->_mida;
   _n_elements = _n_elements;
-  for(int i=0; i < R->_mida; ++i){
+  /*for(int i=0; i < R->_mida; ++i){
     _taula[i] = R->_taula[i];
-  }
+  }*/
 }
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
   if(this != R){
@@ -65,7 +65,7 @@ void call_registry::registra_trucada(nat num) throw(error){
 	nat i = hash(num);
   node_hash* aux = _taula[i];
 
-	if (aux->_phone.numero() == num) ++(_taula[i]->_phone);
+	if (aux->_phone.numero() == num) ++(aux->_phone);
 	else if (aux == NULL){
 		phone nou(num, "", 1);
 		afegir(nou);
@@ -91,8 +91,30 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 
 void call_registry::elimina(nat num) throw(error){
 	nat i = hash(num);
+	node_hash* aux = _taula[i];
+	node_hash* ant = NULL;
+	bool trobat = false;
 
-	throw(ErrNumeroInexistent);
+	while(aux != NULL and not trobat){
+		if(aux->_phone.numero() == num){
+			trobat = true;
+			if(ant == NULL){
+				aux->_seg = ant;
+				--_n_elements;
+				delete[] aux;
+			}
+			else{
+				ant->_seg = aux->_seg;
+				--_n_elements;
+				delete[] aux;
+			}
+		}
+		else{
+			ant = aux;
+			aux = aux->_seg;
+		}
+	}
+	if(not trobat) throw(ErrNumeroInexistent);
 }
 
 bool call_registry::conte(nat num) const throw(){
@@ -102,7 +124,7 @@ bool call_registry::conte(nat num) const throw(){
 	bool res = false;
 
   while(aux != NULL and not res){
-    if (_taula[i]->_phone.numero() == num) res = true;
+    if (aux->_phone.numero() == num) res = true;
     else aux = aux->_seg;
   }
 	return res;
@@ -115,8 +137,8 @@ string call_registry::nom(nat num) const throw(error){
 	string res;
 
   while(aux != NULL and not b){
-    if (_taula[i]->_phone.numero() == num){
-      res = _taula[i]->_phone.nom();
+    if (aux->_phone.numero() == num){
+      res = aux->_phone.nom();
       b = true;
     }
     else aux = aux->_seg;
@@ -131,8 +153,8 @@ nat call_registry::num_trucades(nat num) const throw(error){
   nat res;
 
   while(aux != NULL and not b){
-    if (_taula[i]->_phone.numero() == num){
-      res = _taula[i]->_phone.frequencia();
+    if (aux->_phone.numero() == num){
+      res = aux->_phone.frequencia();
       b = true;
     }
     else aux = aux->_seg;
@@ -143,11 +165,11 @@ nat call_registry::num_trucades(nat num) const throw(error){
 }
 
 bool call_registry::es_buit() const throw(){
-	return _quants == 0;
+	return _n_elements == 0;
 }
 
 nat call_registry::num_entrades() const throw(){
-	return _quants;
+	return _n_elements;
 }
 
 void call_registry::dump(vector<phone>& V) const throw(error){
