@@ -1,7 +1,7 @@
 struct node_hash {
 	phone _phone;
 	node_hash* _seg;
-	node_hash(const phone phone, node_hash* seg = NULL);
+	node_hash(const phone &p, node_hash* seg = NULL);
 };
 
 node_hash **_taula;
@@ -12,3 +12,4 @@ nat hash(nat num) const;		//funcio de hash
 void rehash();
 void afegir(phone p);
 float factor_carrega(nat mida_taula, nat n_elements);
+node_hash* consulta(nat num, nat &k) const;
