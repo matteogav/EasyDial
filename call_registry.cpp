@@ -1,6 +1,11 @@
 #include "call_registry.hpp"
 #include <vector>
 
+call_registry::node_hash::node_hash(const phone &p, node_hash* seg){
+	_phone = p;
+	_seg = seg;
+}
+
 nat call_registry::hash(nat x) const{
 
 	long y = ((x * x * 31415926) >> 4)%_mida;
@@ -8,47 +13,29 @@ nat call_registry::hash(nat x) const{
 
 }
 
-call_registry::node_hash::node_hash (const phone &p, node_hash* seg) throw(error) : _phone(p), _seg(seg){}
+nat call_registry::hash_c(string nom) const{
+
+}
 
 void call_registry::rehash(){
 	_mida *= 2;
 	node_hash **aux = _taula;
-	_taula = new node_hash*[_mida];
+	node_hash **_taula_ = new node_hash*[_mida];
 
 	for (unsigned i = 0; i < (_mida/2); i++){			// per cada posicio i de la taula
 		node_hash *x = aux[i];
 		while (x != NULL){								//per cada node de la sequencia de la posicio i
 			nat j = hash((x->_phone).numero());
 
-			_taula[j] = new node_hash(x->_phone, _taula[j]);				//creo nou node i el poso a davant
+			_taula_[j] = new node_hash(x->_phone, _taula_[j]);				//creo nou node i el poso a davant
 			x = x->_seg;
 		}
 	}
-}
-
-void call_registry::afegir(phone p){
-
-  /*if(factor_carrega(_mida, _n_elements+1) > 0.75) rehash();
-
-  int i = hash(p.numero());
-  node_hash* aux = _taula[i];
-  bool trobat = false;
-  while(aux != NULL and not trobat){
-    if(aux->_phone.numero() == p.numero()) trobat = true;
-    else aux = aux->_seg;
-  }
-
-  if(not trobat){
-    _taula[i] = new node_hash(p, _taula[i]);
-    ++_mida;
-  }*/
-}
-
-float call_registry::factor_carrega(nat mida_taula, nat n_elem){
-
+	_taula = _taula_;
 }
 
 call_registry::node_hash* call_registry::consulta(nat num, nat &i) const{
+	
 	i = hash(num);
 	node_hash *res = _taula[i];
 	bool trobat = false;
@@ -95,6 +82,9 @@ call_registry::~call_registry() throw(){
 }
 
 void call_registry::registra_trucada(nat num) throw(error){
+	float f_carrega = _n_elements/_mida;
+	if(f_carrega > 0.75) rehash();
+
 	nat k;
 	node_hash* aux = consulta(num, k);
 
@@ -108,6 +98,9 @@ void call_registry::registra_trucada(nat num) throw(error){
 }
 
 void call_registry::assigna_nom(nat num, const string& name) throw(error){
+	float f_carrega = _n_elements/_mida;
+	if(f_carrega > 0.75) rehash();
+
 	nat k;
 	node_hash* aux = consulta(num, k);
 
@@ -192,5 +185,58 @@ nat call_registry::num_entrades() const throw(){
 
 void call_registry::dump(vector<phone>& V) const throw(error){
 	//nomes aqui es llança throw(ErrNomRepetit)
+	
+	//volca  elements a una nova taula de hash amb funcio hash dels noms
+	node_hash **_t_aux = new node_hash*[_mida];
+	for (unsigned i = 0; i < _mida; i++){
+		if (_taula[i] != NULL){
+			node_hash *aux = _taula[i];
+			while (aux != NULL){
+				nat j = hash_c((aux->_phone).nom());
+				_t_aux[j] = new node_hash(aux->_phone, _t_aux[j]);
+				aux = aux->_seg;
+			}
+		}
+	}
+	//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
+	//fent lo de sinonims
+	bool iguals = false;
+	nat i = 0;
+	while (i < _mida){
+		if (_t_aux[i] != NULL and _t_aux[i]->_seg != NULL){
+			node_hash *aux = _t_aux[i];
+			while (aux != NULL){
+				node_hash *x = _t_aux[i];
+				string usr = (aux->_phone).nom();
+				while (x != NULL){
+					if(usr == (x->_phone).nom()) iguals = true;
+					x = x->_seg;
+				}
+				if (!iguals) V.push_back(aux->_phone);
+				else throw(ErrNomRepetit);
+				aux = aux->_seg;
+			}
+		}
+		else if (_t_aux[i] != NULL and _t_aux[i]->_seg == NULL){
+			V.push_back(_t_aux[i]->_phone);
+		}
+		i++;
+	}
+
+	
+	
+	
+	
+	//volca els elements al vector (desordenats i sense filtre de repetits)
+	for (unsigned i = 0; i < _mida; i++){
+		if (_taula[i] != NULL){
+			node_hash *aux = _taula[i];
+			while (aux != NULL){
+				V.push_back(aux->_phone);
+				aux = aux->_seg;
+			}
+		}
+	}
+
 
 }

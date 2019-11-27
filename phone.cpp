@@ -2,14 +2,15 @@
 
 //buscar en name si hi ha un dels caracters "prohibits"
 phone::phone(nat num, const string& name, nat compt) throw(error){
-  size_t busca = name.find(DELETECHAR);
-  if (busca != string::npos) throw(ErrNomIncorrecte);
-
-  busca = name.find(ENDCHAR); 
-  if (busca != string::npos) throw(ErrNomIncorrecte);
-
-  busca = name.find(ENDPREF); 
-  if (busca != string::npos) throw(ErrNomIncorrecte);
+  bool trobat = false;
+  nat i = 0;
+  while (i < name.size() and !trobat){
+    if (name[i] == DELETECHAR or name[i] == ENDCHAR or name[i] == ENDPREF){
+      throw error(ErrNomIncorrecte);
+    }
+    i++;
+  }
+  
   telf=num;
   contacte=name;
   freq=compt;
@@ -53,7 +54,7 @@ phone phone::operator++(int) throw(){
 }
 
 bool phone::operator==(const phone& T) const throw(){
-  return (telf == T.telf and contacte == T.contacte and freq == T.freq);
+  return (contacte == T.contacte and freq == T.freq);
 }
 bool phone::operator!=(const phone& T) const throw(){
   return !(*this == T);
@@ -68,7 +69,6 @@ bool phone::operator<(const phone& T) const throw(){
   else res=false;
 
   return res;
-  //return (freq < T.freq and contacte < T.contacte);
 }
 bool phone::operator>(const phone& T) const throw(){
   bool res;
@@ -80,11 +80,20 @@ bool phone::operator>(const phone& T) const throw(){
   else res=false;
 
   return res;
-  //return (freq > T.freq and contacte > T.contacte);
 }
 bool phone::operator<=(const phone& T) const throw(){
-  return (freq <= T.freq and contacte <= T.contacte);
+  bool res;
+  if (*this < T) res=true;
+  else if (*this == T) res=true;
+  else res=false;
+
+  return res;
 }
 bool phone::operator>=(const phone& T) const throw(){
-  return (freq >= T.freq and contacte >= T.contacte);
+  bool res;
+  if (*this > T) res=true;
+  else if (*this == T) res=true;
+  else res=false;
+
+  return res;
 }

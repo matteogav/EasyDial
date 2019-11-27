@@ -9,7 +9,6 @@ nat _mida;
 nat _n_elements;
 
 nat hash(nat num) const;		//funcio de hash
+nat hash_c(string nom) const;
 void rehash();
-void afegir(phone p);
-float factor_carrega(nat mida_taula, nat n_elements);
 node_hash* consulta(nat num, nat &k) const;

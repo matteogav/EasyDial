@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "*.rep": "cpp"
+        "*.rep": "cpp",
+        "util": "cpp"
     }
 }
