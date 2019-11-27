@@ -1,0 +1,1730 @@
+###!-----------------------------------------
+###!
+###! MODUL CALL_REGISTRY
+###!
+###!-----------------------------------------
+###1 call_registry: buit
+###!-----------------------------------------
+###!
+#init c1 call_registry
+#c 101
+false
+##false
+#nom_cr 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#e 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+0
+##0
+#es_buit
+true
+##true
+#dump
+
+##
+#destroy
+###!
+###!
+###!
+###!-----------------------------------------
+###2 call_registry: una entrada
+###!-----------------------------------------
+###!
+###!-----------------------------------------
+###2.1 insercio assignant
+###!-----------------------------------------
+#init c21 call_registry
+#as 102 "I-102"
+###!
+#c 101
+false
+##false
+#nom_cr 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+0
+##0
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+#dump
+102 I-102 0 
+##102 I-102 0 
+#e 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#e 102
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+0
+##0
+#es_buit
+true
+##true
+#dump
+
+##
+#destroy
+###!
+###!
+###!-----------------------------------------
+###2.2 insercio assignant i registrant
+###!-----------------------------------------
+###!
+#init c22 call_registry
+#as 102 "I-102"
+#r 102
+###!
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+1
+##1
+#dump
+102 I-102 1 
+##102 I-102 1 
+###!
+#as 102 "I-102Bis"
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+1
+##1
+#dump
+102 I-102Bis 1 
+##102 I-102Bis 1 
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+###!
+#e 102
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+0
+##0
+#es_buit
+true
+##true
+#dump
+
+##
+#destroy
+###!
+###!
+###!-----------------------------------------
+###2.3 insercio registrant
+###!-----------------------------------------
+###!
+#init c23 call_registry
+#r 102
+###!
+#c 101
+false
+##false
+#nom_cr 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 102
+true
+##true
+#nom_cr 102
+
+##
+#num_trucades 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+1
+##1
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+#dump
+102  1 
+##
+#e 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#e 102
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+0
+##0
+#es_buit
+true
+##true
+#dump
+
+##
+#destroy
+###!
+###!
+###!-----------------------------------------
+###2.4 insercio registrant i assignant
+###!-----------------------------------------
+###!
+#init c24 call_registry
+#r 102
+#as 102 "I-102"
+###!
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+1
+##1
+#dump
+102 I-102 1 
+##102 I-102 1 
+###!
+#as 102 "I-102Bis"
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+1
+##1
+#dump
+102 I-102Bis 1 
+##102 I-102Bis 1 
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+###!
+#e 102
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+0
+##0
+#es_buit
+true
+##true
+#dump
+
+##
+#destroy
+###!
+###!
+###!
+###!-----------------------------------------
+###3 call_registry: dues entrada
+###!-----------------------------------------
+###!
+###!-----------------------------------------
+###3.1 insercio assignant
+###!-----------------------------------------
+###!
+#init c31 call_registry
+#as 101 "I-101"
+#as 103 "I-103"
+#c 100
+false
+##false
+#c 101
+true
+##true
+#c 102
+false
+##false
+#c 103
+true
+##true
+#c 104
+false
+##false
+#nom_cr 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 103
+I-103
+##I-103
+#nom_cr 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+0
+##0
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 103
+0
+##0
+#num_trucades 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 
+##101 I-101 0 103 I-103 0 
+###!
+#r 101
+#c 101
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#num_trucades 101
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101 I-101 1 
+##103 I-103 0 101 I-101 1 
+###!
+#r 103
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 1 103 I-103 1 
+##101 I-101 1 103 I-103 1 
+###!
+#as 101 "I-101Bis"
+#c 101
+true
+##true
+#nom_cr 101
+I-101Bis
+##I-101Bis
+#num_trucades 101
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101Bis 1 103 I-103 1 
+##101 I-101Bis 1 103 I-103 1 
+###!
+#as 103 "I-103Bis"
+#c 103
+true
+##true
+#nom_cr 103
+I-103Bis
+##I-103Bis
+#num_trucades 103
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101Bis 1 103 I-103Bis 1 
+##101 I-101Bis 1 103 I-103Bis 1 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.2 insercio assignant+registrant
+###!-----------------------------------------
+###!
+#init c32 call_registry
+#as 101 "I-101"
+#r 103
+#c 100
+false
+##false
+#c 101
+true
+##true
+#c 102
+false
+##false
+#c 103
+true
+##true
+#c 104
+false
+##false
+#nom_cr 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 103
+
+##
+#nom_cr 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+0
+##0
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 103
+1
+##1
+#num_trucades 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103  1 
+##101 I-101 0 
+###!
+#r 103
+#c 103
+true
+##true
+#nom_cr 103
+
+##
+#num_trucades 103
+2
+##2
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103  2 
+##101 I-101 0 
+###!
+#as 103 "I-103"
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+2
+##2
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 2 
+##101 I-101 0 103 I-103 2 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.3 insercio registrant
+###!-----------------------------------------
+###!
+#init c33 call_registry
+#r 101
+#r 103
+#c 100
+false
+##false
+#c 101
+true
+##true
+#c 102
+false
+##false
+#c 103
+true
+##true
+#c 104
+false
+##false
+#nom_cr 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 101
+
+##
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 103
+
+##
+#nom_cr 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+1
+##1
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 103
+1
+##1
+#num_trucades 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#r 101
+#c 101
+true
+##true
+#nom_cr 101
+
+##
+#num_trucades 101
+2
+##2
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#r 103
+#c 103
+true
+##true
+#nom_cr 103
+
+##
+#num_trucades 103
+2
+##2
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#as 101 "I-101"
+#as 103 "I-103"
+#dump
+101 I-101 2 103 I-103 2 
+##101 I-101 2 103 I-103 2 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.4 insercio registrant+assignant
+###!-----------------------------------------
+###!
+#init c34 call_registry
+#r 101
+#as 103 "I-103"
+#c 100
+false
+##false
+#c 101
+true
+##true
+#c 102
+false
+##false
+#c 103
+true
+##true
+#c 104
+false
+##false
+#nom_cr 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 101
+
+##
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 103
+I-103
+##I-103
+#nom_cr 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 100
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+1
+##1
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 103
+0
+##0
+#num_trucades 104
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+###!
+#r 103
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101  1 103 I-103 1 
+##103 I-103 1 
+###!
+#r 101
+#as 101 "I-103"
+#c 101
+true
+##true
+#nom_cr 101
+I-103
+##I-103
+#num_trucades 101
+2
+##2
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##Error::call_registry:22:Nom repetit.
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.5 eliminar al principi
+###!-----------------------------------------
+###!
+#init c35 call_registry
+#r 101
+#as 103 "I-103"
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+#e 101
+#c 101
+false
+##false
+#e 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 101
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+0
+##0
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+#dump
+103 I-103 0 
+##103 I-103 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.6 eliminar al final
+###!-----------------------------------------
+###!
+#init c36 call_registry
+#r 101
+#as 103 "I-103"
+#e 103
+#c 100
+false
+##false
+#e 103
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 103
+false
+##false
+#nom_cr 103
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 103
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 101
+true
+##true
+#nom_cr 101
+
+##
+#num_trucades 101
+1
+##1
+#num_entrades
+1
+##1
+#es_buit
+false
+##false
+#dump
+101  1 
+##
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.7 eliminar+registrar principi
+###!-----------------------------------------
+###!
+#init c37 call_registry
+#as 101 "I-101"
+#as 103 "I-103"
+#dump
+101 I-101 0 103 I-103 0 
+##101 I-101 0 103 I-103 0 
+#e 101
+#dump
+103 I-103 0 
+##103 I-103 0 
+#r 101
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+0
+##0
+#c 101
+true
+##true
+#nom_cr 101
+
+##
+#num_trucades 101
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+###!
+#as 101 "I-101Bis"
+#dump
+103 I-103 0 101 I-101Bis 1 
+##103 I-103 0 101 I-101Bis 1 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###3.8 eliminar+registrar final
+###!-----------------------------------------
+###!
+#init c38 call_registry
+#r 101
+#as 103 "I-103"
+#e 103
+#dump
+101  1 
+##
+#r 103
+#c 103
+true
+##true
+#nom_cr 103
+
+##
+#num_trucades 103
+1
+##1
+#c 101
+true
+##true
+#nom_cr 101
+
+##
+#num_trucades 101
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#destroy
+###!
+###!
+###!
+###!-----------------------------------------
+###4 call_registry: tres entrada
+###!-----------------------------------------
+###!
+###!-----------------------------------------
+###4.1 insercio as+as+as
+###!-----------------------------------------
+###!
+#init c41 call_registry
+#as 103 "I-103"
+#as 101 "I-101"
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+101 I-101 0 103 I-103 0 
+##101 I-101 0 103 I-103 0 
+###!
+#as 102 "I-102"
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+I-102
+##I-102
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 101
+0
+##0
+#num_trucades 102
+0
+##0
+#num_trucades 103
+0
+##0
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 102 I-102 0 103 I-103 0 
+##101 I-101 0 102 I-102 0 103 I-103 0 
+###!
+#r 102
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 102 I-102 1 
+##101 I-101 0 103 I-103 0 102 I-102 1 
+###!
+#as 102 "I-102Bis"
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 102 I-102Bis 1 
+##101 I-101 0 103 I-103 0 102 I-102Bis 1 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.2 insercio as+as+r
+###!-----------------------------------------
+###!
+#init c42 call_registry
+#as 103 "I-103"
+#as 101 "I-101"
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+101 I-101 0 103 I-103 0 
+##101 I-101 0 103 I-103 0 
+###!
+#r 102
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+
+##
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 101
+0
+##0
+#num_trucades 102
+1
+##1
+#num_trucades 103
+0
+##0
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 102  1 
+##101 I-101 0 103 I-103 0 
+###!
+#r 102
+#c 102
+true
+##true
+#nom_cr 102
+
+##
+#num_trucades 102
+2
+##2
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 102  2 
+##101 I-101 0 103 I-103 0 
+###!
+#as 102 "I-102Bis"
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+2
+##2
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103 I-103 0 102 I-102Bis 2 
+##101 I-101 0 103 I-103 0 102 I-102Bis 2 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.3 insercio as+r+as
+###!-----------------------------------------
+###!
+#init c43 call_registry
+#as 103 "I-103"
+#r 101
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+###!
+#as 102 "I-102"
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+
+##
+#nom_cr 102
+I-102
+##I-102
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 101
+1
+##1
+#num_trucades 102
+0
+##0
+#num_trucades 103
+0
+##0
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+102 I-102 0 103 I-103 0 101  1 
+##102 I-102 0 103 I-103 0 
+###!
+#as 102 "I-102Bis"
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+0
+##0
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+102 I-102Bis 0 103 I-103 0 101  1 
+##102 I-102Bis 0 103 I-103 0 
+###!
+#r 102
+#c 102
+true
+##true
+#nom_cr 102
+I-102Bis
+##I-102Bis
+#num_trucades 102
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 102 I-102Bis 1 
+##103 I-103 0 102 I-102Bis 1 
+#as 102 "I-103"
+#dump
+Error::call_registry:22:Nom repetit.
+##Error::call_registry:22:Nom repetit.
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.4 insercio as+r+r
+###!-----------------------------------------
+###!
+#init c44 call_registry
+#as 103 "I-103"
+#r 101
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+###!
+#r 102
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+
+##
+#nom_cr 102
+
+##
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 101
+1
+##1
+#num_trucades 102
+1
+##1
+#num_trucades 103
+0
+##0
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##103 I-103 0 
+###!
+#as 102 "I-102"
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 102 I-102 1 
+##103 I-103 0 102 I-102 1 
+###!
+#r 102
+#c 102
+true
+##true
+#nom_cr 102
+I-102
+##I-102
+#num_trucades 102
+2
+##2
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 102 I-102 2 
+##103 I-103 0 102 I-102 2 
+#as 101 "I-102"
+#dump
+Error::call_registry:22:Nom repetit.
+##Error::call_registry:22:Nom repetit.
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.5 insercio r+as+as
+###!-----------------------------------------
+###!
+#init c45 call_registry
+#r 103
+#as 101 "I-101"
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+101 I-101 0 103  1 
+##101 I-101 0 
+###!
+#as 102 "I-102"
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+I-102
+##I-102
+#nom_cr 103
+
+##
+#num_trucades 101
+0
+##0
+#num_trucades 102
+0
+##0
+#num_trucades 103
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+101 I-101 0 102 I-102 0 103  1 
+##101 I-101 0 102 I-102 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.6 insercio r+as+r
+###!-----------------------------------------
+###!
+#init c46 call_registry
+#r 103
+#as 101 "I-101"
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+101 I-101 0 103  1 
+##101 I-101 0 
+###!
+#r 102
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#nom_cr 102
+
+##
+#nom_cr 103
+
+##
+#num_trucades 101
+0
+##0
+#num_trucades 102
+1
+##1
+#num_trucades 103
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##101 I-101 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.7 insercio r+r+as
+###!-----------------------------------------
+###!
+#init c47 call_registry
+#r 103
+#r 101
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#as 102 "I-102"
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+
+##
+#nom_cr 102
+I-102
+##I-102
+#nom_cr 103
+
+##
+#num_trucades 101
+1
+##1
+#num_trucades 102
+0
+##0
+#num_trucades 103
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##102 I-102 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###.4.8 insercio r+r+r
+###!-----------------------------------------
+###!
+#init c48 call_registry
+#r 103
+#r 101
+#c 102
+false
+##false
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#r 102
+#c 101
+true
+##true
+#c 102
+true
+##true
+#c 103
+true
+##true
+#nom_cr 101
+
+##
+#nom_cr 102
+
+##
+#nom_cr 103
+
+##
+#num_trucades 101
+1
+##1
+#num_trucades 102
+1
+##1
+#num_trucades 103
+1
+##1
+#num_entrades
+3
+##3
+#es_buit
+false
+##false
+#dump
+Error::call_registry:22:Nom repetit.
+##
+#destroy
+###!
+###!
+###!-----------------------------------------
+###4.9 eliminar as
+###!-----------------------------------------
+###!
+#init c49 call_registry
+#r 103
+#as 101 "I-101"
+#as 102 "I-102"
+#e 102
+#c 102
+false
+##false
+#e 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 103
+true
+##true
+#nom_cr 103
+
+##
+#num_trucades 103
+1
+##1
+#c 101
+true
+##true
+#nom_cr 101
+I-101
+##I-101
+#num_trucades 101
+0
+##0
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+101 I-101 0 103  1 
+##101 I-101 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###4.10 eliminar as
+###!-----------------------------------------
+###!
+#init c410 call_registry
+#as 103 "I-103"
+#r 101
+#r 102
+#e 102
+#c 102
+false
+##false
+#e 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#nom_cr 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#num_trucades 102
+Error::call_registry:21:Numero inexistent.
+##Error::call_registry:21:Numero inexistent.
+#c 103
+true
+##true
+#nom_cr 103
+I-103
+##I-103
+#num_trucades 103
+0
+##0
+#c 101
+true
+##true
+#nom_cr 101
+
+##
+#num_trucades 101
+1
+##1
+#num_entrades
+2
+##2
+#es_buit
+false
+##false
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+#destroy
+###!
+###!
+###!-----------------------------------------
+###4.11 eliminar + assignar
+###!-----------------------------------------
+###!
+#init c411 call_registry
+#as 103 "I-103"
+#r 101
+#r 102
+#dump
+Error::call_registry:22:Nom repetit.
+##103 I-103 0 
+#e 102
+#dump
+103 I-103 0 101  1 
+##103 I-103 0 
+###!
+#as 102 "I-102"
+#c 102
+true
+##true
+#num_trucades 102
+0
+##0
+#nom_cr 102
+I-102
+##I-102
+#dump
+102 I-102 0 103 I-103 0 101  1 
+##102 I-102 0 103 I-103 0 
+#destroy
+###!
+###!
+###!
+###!-----------------------------------------
+###5 Call_Registry: 31 entrades
+###!-----------------------------------------
+###!
+###!-----------------------------------------
+###5.1 assigna creixent
+###!-----------------------------------------
+###!
+#init c51 call_registry
+#as 101 "I-101"
+#as 102 "I-102"
+#as 103 "I-103"
+#as 104 "I-104"
+#as 105 "I-105"
+#as 106 "I-106"
+#as 107 "I-107"
+#as 108 "I-108"
+#as 109 "I-109"
+#as 110 "I-110"
+#as 1111 "I-1111"
+#as 1112 "I-1112"
+#as 1113 "I-1113"
+mida: 16 n_elem: 12
+------------------------------REHASH--------------------------
+0. [1112, I-1112, I-1112] --> [108, I-108, I-108] --> [104, I-104, I-104] --> 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. [1111, I-1111, I-1111] --> [109, I-109, I-109] --> [107, I-107, I-107] --> [105, I-105, I-105] --> [103, I-103, I-103] --> [101, I-101, I-101] --> 
+7. 
+8. [110, I-110, I-110] --> [106, I-106, I-106] --> [102, I-102, I-102] --> 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+32
+0. [104, I-104, I-104] --> [108, I-108, I-108] --> [1112, I-1112, I-1112] --> 
