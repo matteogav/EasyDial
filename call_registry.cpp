@@ -22,25 +22,12 @@ nat call_registry::hash_c(string nom) const{
 }
 
 void call_registry::rehash(){
-	cout<<"mida: "<<_mida<<" n_elem: "<<_n_elements<<endl;
-	cout<<"------------------------------REHASH--------------------------"<<endl;
+	//cout<<"------------------------------REHASH--------------------------"<<endl;
 	nat mida = _mida;
 	_mida *= 2;
 	node_hash **aux = _taula;
 	node_hash **_taula_ = new node_hash*[_mida];
-
-
-	//imprimir taula
-	for (unsigned i = 0; i<mida;i++){
-		node_hash *x = aux[i];
-		cout<<i<<". ";
-		while (x != NULL){								//per cada node de la sequencia de la posicio i
-			cout<<"["<<(x->_phone).numero()<<", "<<(x->_phone).nom()<<", "<<(x->_phone).nom()<<"] --> ";
-			x = x->_seg;
-		}
-		cout<<endl;
-	}
-
+	for(nat i=0; i<_mida ; ++i) _taula_[i] = NULL;
 
 	for (unsigned i = 0; i < mida; i++){				// per cada posicio i de la taula abans de rehash
 		node_hash *x = aux[i];
@@ -50,21 +37,6 @@ void call_registry::rehash(){
 			x = x->_seg;
 		}
 	}
-
-
-//imprimir taula
-	cout<<_mida<<endl;
-	for (unsigned i = 0; i<_mida;i++){
-		node_hash *x = _taula_[i];
-		cout<<i<<". ";
-		while (x != NULL){								//per cada node de la sequencia de la posicio i
-			cout<<"["<<(x->_phone).numero()<<", "<<(x->_phone).nom()<<", "<<(x->_phone).nom()<<"] --> ";
-			x = x->_seg;
-		}
-		cout<<endl;
-	}
-
-
 	_taula = _taula_;
 }
 
@@ -103,6 +75,10 @@ call_registry::call_registry(const call_registry& R) throw(error){
   	}
 }
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
+	for (unsigned i = 0; i < _mida; i++){
+		if (_taula[i]) delete _taula[i];
+	}
+	delete[] _taula;
 	if(this != &R){
     	_mida = R._mida;
     	_n_elements = _n_elements;
@@ -245,6 +221,8 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 	//nomes aqui es llança throw error(ErrNomRepetit)
 	//volca  elements a una nova taula de hash amb funcio hash dels noms
 	node_hash **_t_aux = new node_hash*[_mida];
+	for(nat i=0; i<_mida ; ++i) _t_aux[i] = NULL;
+
 	for (unsigned i = 0; i < _mida; i++){
 		if (_taula[i] != NULL){
 			node_hash *aux = _taula[i];
@@ -255,11 +233,10 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 			}
 		}
 	}
+
 	//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
 	//fent lo de sinonims
-	bool iguals = false;
-	nat i = 0;
-	while (i < _mida){
+	for (unsigned i = 0; i < _mida; i++){
 		if (_t_aux[i] != NULL and _t_aux[i]->_seg != NULL){
 			node_hash *aux = _t_aux[i];
 
@@ -267,20 +244,28 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				node_hash *x = aux->_seg;
 				string usr = (aux->_phone).nom();
 
-				while (x != NULL){				//comprova si els sinonims que queden si hi ha algun igual de nom
-					if(usr == (x->_phone).nom()) iguals = true;
+				bool trobat = false;
+				while (x != NULL and !trobat){				//comprova si els sinonims que queden si hi ha algun igual de nom
+					if(usr != "") if (usr == (x->_phone).nom()) trobat = true;
 					x = x->_seg;
 				}
-				if (!iguals) V.push_back(aux->_phone);
-				else throw error(ErrNomRepetit);
+				if (trobat) throw error(ErrNomRepetit);
+				else {
+					if(usr != ""){
+						V.push_back(aux->_phone);
+					}
+				}
 				aux = aux->_seg;
 			}
 		}
 		else if (_t_aux[i] != NULL and _t_aux[i]->_seg == NULL){
-			V.push_back(_t_aux[i]->_phone);
+			if ((_t_aux[i]->_phone).nom() != ""){
+				V.push_back(_t_aux[i]->_phone);
+			}
 		}
-		i++;
 	}
+
+	//###5 Call_Registry: 31 entrades
 
 
 
@@ -299,3 +284,21 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 	//fer metode ordenacio raidxsort i mirar si el seguent es igual al actual i si son igual ERROR sino res
 */
 }
+
+
+
+
+/*	//imprimir taula
+	for (unsigned i = 0; i<_mida;i++){
+		cout<<i<<". ";
+		if (_taula_[i] != NULL){
+			node_hash *x = _taula_[i];
+			while (x != NULL){								//per cada node de la sequencia de la posicio i
+				cout<<"["<<(x->_phone).numero()<<", "<<(x->_phone).nom()<<", "<<(x->_phone).frequencia()<<"] --> ";
+				x = x->_seg;
+			}
+		}
+		cout<<endl;
+	}
+
+*/
