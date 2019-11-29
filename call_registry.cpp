@@ -69,23 +69,32 @@ call_registry::call_registry() throw(error){
 /* Constructor per còpia, operador d'assignació i destructor. */
 call_registry::call_registry(const call_registry& R) throw(error){
 	_mida = R._mida;
-  	_n_elements = R._n_elements;
-  	for(nat i=0; i < R._mida; ++i){
-    	_taula[i] = R._taula[i];
-  	}
+	_n_elements = R._n_elements;
+	node_hash **_taula_ = new node_hash*[_mida];
+
+	for(nat i=0; i < R._mida; ++i){
+		node_hash *aux = R._taula[i];
+		while (aux != NULL){
+			_taula_[i] = new node_hash(aux->_phone, _taula_[i]);
+			aux = aux->_seg;
+		}
+	}
+	_taula = _taula_;
 }
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
-	for (unsigned i = 0; i < _mida; i++){
-		if (_taula[i]) delete _taula[i];
+	_mida = R._mida;
+	_n_elements = R._n_elements;
+	node_hash **_taula_ = new node_hash*[_mida];
+
+	for(nat i=0; i < R._mida; ++i){
+		node_hash *aux = R._taula[i];
+		while (aux != NULL){
+			_taula_[i] = new node_hash(aux->_phone, _taula_[i]);
+			aux = aux->_seg;
+		}
 	}
-	delete[] _taula;
-	if(this != &R){
-    	_mida = R._mida;
-    	_n_elements = _n_elements;
-    	for(nat i=0; i < R._mida; ++i){
-      		_taula[i] = R._taula[i];
-    	}
-	}
+	_taula = _taula_;
+	
 	return *this;
 }
 call_registry::~call_registry() throw(){
