@@ -4,7 +4,7 @@ struct node_hash {
 	node_hash(const phone &p, node_hash* seg = NULL);
 };
 
-node_hash **_taula;
+node_hash** _taula;
 nat _mida;
 nat _n_elements;
 
