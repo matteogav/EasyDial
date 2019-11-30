@@ -75,11 +75,11 @@ call_registry::call_registry(const call_registry& R) throw(error){
 	for(nat i=0; i < R._mida; ++i){
 		node_hash *aux = R._taula[i];
 		while (aux != NULL){
-			taula_aux[i] = new node_hash(aux->_phone, _taula_[i]);
+			taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
 			aux = aux->_seg;
 		}
 	}
-	_taula = _taula_;
+	_taula = taula_aux;
 }
 
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
@@ -267,8 +267,8 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				aux = aux->_seg;
 			}
 		}
-		else if (_t_aux[i] != NULL and _t_aux[i]->_seg == NULL){
-			if ((_t_aux[i]->_phone).nom() != "") V.push_back(_t_aux[i]->_phone);
+		else if (taula_aux[i] != NULL and taula_aux[i]->_seg == NULL){
+			if ((taula_aux[i]->_phone).nom() != "") V.push_back(taula_aux[i]->_phone);
 		}
 	}
 
