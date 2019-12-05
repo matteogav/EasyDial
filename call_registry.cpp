@@ -87,15 +87,16 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 	_n_elements = R._n_elements;
 	node_hash **taula_aux = new node_hash*[_mida];
 
-	for(nat i=0; i < R._mida; ++i){
-		node_hash *aux = R._taula[i];
-		while (aux != NULL){
-			taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
-			aux = aux->_seg;
+	if(*this != &R){
+		for(nat i=0; i < R._mida; ++i){
+			node_hash *aux = R._taula[i];
+			while (aux != NULL){
+				taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
+				aux = aux->_seg;
+			}
 		}
+		_taula = taula_aux;
 	}
-	_taula = taula_aux;
-
 	return *this;
 }
 
