@@ -7,12 +7,16 @@ call_registry::node_hash::node_hash(const phone &p, node_hash* seg){
 }
 
 nat call_registry::hash(nat x) const{
+	long y = (x * x * 31415926)%_mida;
+
+	return y;
+	/*
 	nat y = x, n;
 	for(int i=1; y <= 0; ++i){
 		n = y%10 * i;
 		y = y/10;
 	}
-	return n;
+	return n;*/
 }
 
 nat call_registry::hash_c(string nom) const{
@@ -58,6 +62,13 @@ call_registry::node_hash* call_registry::consulta(nat num, nat &i) const{
 	return res;
 }
 
+void call_registry::esborrar(node_hash* n) const{
+	if (n!=NULL) {
+    	esborrar(n->_seg);
+    	delete n;
+  	}
+}
+
 call_registry::call_registry() throw(error){
 
 	_mida = 16;
@@ -70,12 +81,22 @@ call_registry::call_registry() throw(error){
 call_registry::call_registry(const call_registry& R) throw(error){
 	_mida = R._mida;
 	_n_elements = R._n_elements;
-	node_hash **taula_aux = new node_hash*[_mida];
 
-	for(nat i=0; i < R._mida; ++i){
-		node_hash *aux = R._taula[i];
-		while (aux != NULL){
-			taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
+	node_hash **taula_aux = new node_hash*[_mida];
+	for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
+
+	for(nat i=0; i < _mida; ++i){
+		node_hash* aux = R._taula[i];
+		node_hash *ant = NULL;
+		while(aux != NULL){
+			if(ant == NULL) {
+				taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
+				ant = taula_aux[i];
+			}
+			else {
+				ant->_seg = new node_hash(aux->_phone, ant->_seg);
+			}
+			
 			aux = aux->_seg;
 		}
 	}
@@ -85,62 +106,93 @@ call_registry::call_registry(const call_registry& R) throw(error){
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
 	_mida = R._mida;
 	_n_elements = R._n_elements;
-	node_hash **taula_aux = new node_hash*[_mida];
 
-	if(*this != &R){
-		for(nat i=0; i < R._mida; ++i){
-			node_hash *aux = R._taula[i];
-			while (aux != NULL){
-				taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
+	node_hash **taula_aux = new node_hash*[_mida];
+	for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
+
+	if(this != &R){
+		for(nat i=0; i < _mida; ++i){
+			node_hash* aux = R._taula[i];
+			node_hash *ant = NULL;
+			while(aux != NULL){
+				if(ant == NULL) {
+					taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
+					ant = taula_aux[i];
+				}
+				else {
+					ant->_seg = new node_hash(aux->_phone, ant->_seg);
+				}
+			
 				aux = aux->_seg;
 			}
 		}
 		_taula = taula_aux;
 	}
+
 	return *this;
 }
 
 call_registry::~call_registry() throw(){
-	for (nat i = 0; i < _mida; ++i){
-		if (_taula[i]) delete _taula[i];
-	}
+	for (nat i = 0; i < _mida; ++i) esborrar(_taula[i]);
 	delete[] _taula;
 }
 
 void call_registry::registra_trucada(nat num) throw(error){
-	float f_carrega = float(_n_elements)/float(_mida);
-	if(f_carrega > 0.75) rehash();
+	if (es_buit()){
+		nat z = hash(num);
+		phone nou_p(num, "", 1);
+		_taula[z] = new node_hash(nou_p, _taula[z]);
+		++_n_elements;
+	}
+	else {
+		float f_carrega = float(_n_elements)/float(_mida);
+		if(f_carrega > 0.75) rehash();
 
-	nat k;
-	node_hash* aux = consulta(num, k);
-	if (aux !=NULL){
-		//si no le trobat de moment estic al ultim node de la llista comprovo si, és igual o no.
-		if (aux->_phone.numero() == num) ++aux->_phone;		//sumo en un la frequencia
-		else { 													//creo un nou node amb freq 1 i sense num
+		nat k;
+		node_hash* aux = consulta(num, k);
+
+		if (aux != NULL){
+			//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
+			if (aux->_phone.numero() == num) ++aux->_phone;			//sumo en un la frequencia
+			else { 													//creo un nou node amb freq 1 i sense num			
+				phone nou_p(num, "", 1);
+				_taula[k] = new node_hash(nou_p, _taula[k]);
+				++_n_elements;
+			}
+		}
+		else { 														//creo un nou node amb freq 1 i sense num
 			phone nou_p(num, "", 1);
 			_taula[k] = new node_hash(nou_p, _taula[k]);
 			++_n_elements;
 		}
 	}
-	else { 													//creo un nou node amb freq 1 i sense num
-		phone nou_p(num, "", 1);
-		_taula[k] = new node_hash(nou_p, _taula[k]);
-		++_n_elements;
-	}
 }
 
 void call_registry::assigna_nom(nat num, const string& name) throw(error){
-	float f_carrega = float(_n_elements)/float(_mida);
-	if(f_carrega > 0.75) rehash();
+	if (es_buit()){
+		nat z = hash(num);
+		phone nou_p(num, name, 0);
+		_taula[z] = new node_hash(nou_p, _taula[z]);
+		++_n_elements;
+	}
+	else {
+		float f_carrega = float(_n_elements)/float(_mida);
+		if(f_carrega > 0.75) rehash();
 
-	nat k;
-	node_hash* aux = consulta(num, k);
+		nat k;
+		node_hash* aux = consulta(num, k);
 
-	if (aux != NULL){
-		//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
-		if (aux->_phone.numero() == num){
-			phone modificat(num, name, aux->_phone.frequencia());
-			(aux->_phone) = modificat;
+		if (aux != NULL){
+			//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
+			if (aux->_phone.numero() == num){
+				phone modificat(num, name, aux->_phone.frequencia());
+				(aux->_phone) = modificat;
+			}
+			else { 													//creo un nou node amb freq 0
+				phone nou_p(num, name, 0);
+				_taula[k] = new node_hash(nou_p, _taula[k]);
+				++_n_elements;
+			}
 		}
 		else { 													//creo un nou node amb freq 0
 			phone nou_p(num, name, 0);
@@ -148,14 +200,10 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 			++_n_elements;
 		}
 	}
-	else { 													//creo un nou node amb freq 0
-		phone nou_p(num, name, 0);
-		_taula[k] = new node_hash(nou_p, _taula[k]);
-		++_n_elements;
-	}
 }
 
 void call_registry::elimina(nat num) throw(error){
+	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat i = hash(num);
 	node_hash* aux = _taula[i];
 	node_hash* ant = NULL;
@@ -181,10 +229,12 @@ void call_registry::elimina(nat num) throw(error){
 	if(not trobat) throw error(ErrNumeroInexistent);
 }
 
-bool call_registry::conte(nat num) const throw(){
+bool call_registry::conte(nat num) const throw(){	
+	if (es_buit()) return false;
+	bool res = false;
+
 	nat k=0;
 	node_hash* aux = consulta(num, k);
-	bool res = false;
 
 	if (aux != NULL){
 		if (aux->_phone.numero() == num) res = true;
@@ -194,6 +244,7 @@ bool call_registry::conte(nat num) const throw(){
 }
 
 string call_registry::nom(nat num) const throw(error){
+	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat k;
 	node_hash* aux = consulta(num, k);
 	string res;
@@ -208,6 +259,7 @@ string call_registry::nom(nat num) const throw(error){
 }
 
 nat call_registry::num_trucades(nat num) const throw(error){
+	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat k;
 	node_hash* aux = consulta(num, k);
 	nat res;
@@ -232,76 +284,59 @@ nat call_registry::num_entrades() const throw(){
 void call_registry::dump(vector<phone>& V) const throw(error){
 	//nomes aqui es llança throw error(ErrNomRepetit)
 	//volca  elements a una nova taula de hash amb funcio hash dels noms
-	node_hash** taula_aux = new node_hash*[_mida];
-	for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
+	if(not es_buit()){
+		node_hash** taula_aux = new node_hash*[_mida];
+		for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
 
-	for (nat i = 0; i < _mida; ++i){
-		if (_taula[i] != NULL){
-			node_hash* aux = _taula[i];
-			while (aux != NULL){
-				nat j = hash_c(aux->_phone.nom());
-				taula_aux[j] = new node_hash(aux->_phone, taula_aux[j]);
-				aux = aux->_seg;
-			}
-		}
-	}
-
-	//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
-	//fent lo de sinonims
-	for (nat i = 0; i < _mida; ++i){
-		if (taula_aux[i] != NULL and taula_aux[i]->_seg != NULL){
-			node_hash* aux = taula_aux[i];
-
-			while (aux != NULL){				//afegir a vector si no es igual en cap sinonim
-				node_hash *x = aux->_seg;
-				string usr = aux->_phone.nom();
-
-				bool trobat = false;
-				while (x != NULL and !trobat){				//comprova si els sinonims que queden si hi ha algun igual de nom
-					if(usr != "") if (usr == x->_phone.nom()) trobat = true;
-					x = x->_seg;
+		for (nat i = 0; i < _mida; ++i){
+			if (_taula[i] != NULL){
+				node_hash* aux = _taula[i];
+				while (aux != NULL){
+					nat j = hash_c(aux->_phone.nom());
+					taula_aux[j] = new node_hash(aux->_phone, taula_aux[j]);
+					aux = aux->_seg;
 				}
-				if (trobat) throw error(ErrNomRepetit);
-				else {
-					if(usr != "") V.push_back(aux->_phone);
+			}
+		}
+
+		//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
+		//fent lo de sinonims
+		for (nat i = 0; i < _mida; ++i){
+			if (taula_aux[i] != NULL and taula_aux[i]->_seg != NULL){
+				node_hash* aux = taula_aux[i];
+
+				while (aux != NULL){				//afegir a vector si no es igual en cap sinonim
+					node_hash *x = aux->_seg;
+					string usr = aux->_phone.nom();
+
+					bool trobat = false;
+					while (x != NULL and !trobat){				//comprova si els sinonims que queden si hi ha algun igual de nom
+						if(usr != "") if (usr == x->_phone.nom()) trobat = true;
+						x = x->_seg;
+					}
+					if (trobat) throw error(ErrNomRepetit);
+					else {
+						if(usr != "") V.push_back(aux->_phone);
+					}
+					aux = aux->_seg;
 				}
-				aux = aux->_seg;
 			}
-		}
-		else if (taula_aux[i] != NULL and taula_aux[i]->_seg == NULL){
-			if ((taula_aux[i]->_phone).nom() != "") V.push_back(taula_aux[i]->_phone);
-		}
-	}
-
-	//###5 Call_Registry: 31 entrades
-
-
-
-/*
-	//volca els elements al vector (desordenats i sense filtre de repetits)
-	for (unsigned i = 0; i < _mida; i++){
-		if (_taula[i] != NULL){
-			node_hash *aux = _taula[i];
-			while (aux != NULL){
-				V.push_back(aux->_phone);
-				aux = aux->_seg;
+			else if (taula_aux[i] != NULL and taula_aux[i]->_seg == NULL){
+				if ((taula_aux[i]->_phone).nom() != "") V.push_back(taula_aux[i]->_phone);
 			}
 		}
 	}
-
-	//fer metode ordenacio raidxsort i mirar si el seguent es igual al actual i si son igual ERROR sino res
-*/
 }
 
 
 
 
-/*	//imprimir taula
+/*		//imprimir taula
 	for (unsigned i = 0; i<_mida;i++){
 		cout<<i<<". ";
-		if (_taula_[i] != NULL){
-			node_hash *x = _taula_[i];
-			while (x != NULL){								//per cada node de la sequencia de la posicio i
+		node_hash *x = _taula[i];
+		if (x != NULL){
+			while (x != NULL){							//per cada node de la sequencia de la posicio i
 				cout<<"["<<(x->_phone).numero()<<", "<<(x->_phone).nom()<<", "<<(x->_phone).frequencia()<<"] --> ";
 				x = x->_seg;
 			}
