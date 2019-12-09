@@ -1,0 +1,13 @@
+struct node_tst{
+  string _lletra;
+  node_tst* _esq;
+  node_tst* _dret;
+  node_tst* _central;
+};
+
+node_trie* _arrel;
+string _prefix;
+call_registry _registre;
+
+void insereix(const phone& P);
+node_tst* rinsereix(node_tst* n, nat i, string s);
