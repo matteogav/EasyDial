@@ -5,7 +5,7 @@ struct node_tst{
   node_tst* _central;
 };
 
-node_trie* _arrel;
+node_tst* _arrel;
 string _prefix;
 call_registry _registre;
 
