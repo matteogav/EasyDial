@@ -1,15 +1,16 @@
 struct node_tst{
-  string _lletra;
+  char _lletra;
   node_tst* _esq;
   node_tst* _dret;
   node_tst* _central;
+  nat _tlf;
+  nat _freq;
 };
 
 node_tst* _arrel;
 string _prefix;
-call_registry _registre;
 nat _n_elem;
 
 void insereix(const phone& P);
-node_tst* rinsereix(node_tst* n, nat i, string s, string s_tlf) throw;
-void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) throw;
+node_tst* rinsereix(node_tst* n, nat &i, string s, nat tlf, nat freq) throw(error);
+void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) const throw;
