@@ -6,7 +6,6 @@ void easy_dial::insereix(const phone& P){
   s += phone::ENDPREF;
   nat tlf = P.numero();
   nat frequen = P.frequencia();
-
   nat i=0;
   _arrel = rinsereix(_arrel, i, s, tlf, frequen);
 }
@@ -18,8 +17,8 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, nat tlf
     ph->_lletra = s[i];
     try {
       if (i < s.length()-1) n->_central = rinsereix(n->_central, i+1, s, tlf, frequen);
-      else{      //NOTA: el que diu als apunts [ i == s.length()-1; s[i] == Simbol() ]  com que es ultim node li afegim tlf i freq que te
-        ph->_tlf = tlf;
+      else{                     //NOTA: el que diu als apunts [ i == s.length()-1; s[i] == Simbol() ]
+        ph->_tlf = tlf;         //com que es ultim node li afegim tlf i freq que te
         ph->_freq = frequen;
       }
     }
@@ -65,6 +64,28 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
   }
 }
 
+void easy_dial::esborra_tst(node_tst* n) throw(){
+  if(n != NULL){
+    esborra_tst(n->_central);
+    esborra_tst(n->_dret);
+    esborra_tst(n->_esq);
+    delete n;
+  }
+}
+
+easy_dial::node_tst* easy_dial::copia_tst(node_tst* n) throw(error){
+  if(n != NULL){
+    node_tst* aux = new node_tst;
+    aux->_lletra = n->_lletra;
+    aux->_tlf = n->_tlf;
+    aux->_freq = n->_freq;
+    aux->_esq = copia_tst(n->_esq);
+    aux->_central = copia_tst(n->_central);
+    aux->_dret = copia_tst(n->_dret);
+  }
+  return n;
+}
+
 easy_dial::easy_dial(const call_registry& R) throw(error){
 
   vector<phone> v;
@@ -72,33 +93,43 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
 
   //ordenar vector per frequencia mes alta a mes baixa, he triat mergesort
 
-
   for(nat i = 0; i<v.size(); ++i) insereix(v[i]);
   _n_elem = R.num_entrades();
+  _pref_n = NULL;
   _prefix="";   //el prefix en curs queda indefinit
 }
 
 /* Tres grans. Constructor per còpia, operador d'assignació i destructor. */
 easy_dial::easy_dial(const easy_dial& D) throw(error){
-
+  _prefix = D._prefix;
+  _n_elem = D._n_elem;
+  _pref_n = D._pref_n;
+  _arrel = copia_tst(D._arrel);
 }
 easy_dial& easy_dial::operator=(const easy_dial& D) throw(error){
-
+  if(this != &D){
+    easy_dial e(D);
+    node_tst* aux = _arrel;
+    _arrel = e._arrel;
+    e._arrel = aux;
+  }
+  return *this;
 }
 easy_dial::~easy_dial() throw(){
-
+  esborra_tst(_arrel);
 }
 
 string easy_dial::inici() throw(){
   /* Cost constant?*/
   _prefix = "";
+  _pref_n = _arrel;
   string res = "";
 
   if (_n_elem != 0){
-    node_tst* n=_arrel;
+    node_tst* n = _pref_n;
     while (n->_lletra != phone::ENDPREF){       //cost el numero de lletres que te la persona mes frequent de l'agenda
       res += n->_lletra;
-      n=n->_central;
+      n = n->_central;
     }
   }
 
@@ -107,7 +138,7 @@ string easy_dial::inici() throw(){
 
 string easy_dial::seguent(char c) throw(error){
   /* Cost constant?*/
-  /* si introdueix dos cops seguit string buit, tira erro pref indef i */
+  /* si introdueix dos cops seguit string buit, tira error pref indef i */
   if (anterior().empty()) throw error(ErrPrefixIndef);
   string res="";
   _prefix += c;
@@ -127,7 +158,7 @@ nat easy_dial::num_telf() const throw(error){
 }
 
 void easy_dial::comencen(const string& pref, vector<string>& result) const throw(error){
-  /* El que he fet és guardar una string amb el prefix, primer busco el prefix i un cop la i es
+  /* El que he fet és guardar un string amb el prefix, primer busco el prefix i un cop la i es
   igual a la mida del prefix busco per esq, central i dret totes les paruales que hi ha*/
 
   nat i = 0;

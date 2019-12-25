@@ -1,16 +1,19 @@
 struct node_tst{
   char _lletra;
   node_tst* _esq;
-  node_tst* _dret;
   node_tst* _central;
+  node_tst* _dret;
   nat _tlf;
   nat _freq;
 };
 
 node_tst* _arrel;
+node_tst* _pref_n;
 string _prefix;
 nat _n_elem;
 
 void insereix(const phone& P);
 node_tst* rinsereix(node_tst* n, nat &i, string s, nat tlf, nat freq) throw(error);
+void esborra_tst(node_tst* n) throw();
+node_tst* copia_tst(node_tst* n) throw(error);
 void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) const throw;

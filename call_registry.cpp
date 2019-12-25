@@ -16,7 +16,7 @@ nat call_registry::hash(nat x) const{
 		n = y%10 * i;
 		y = y/10;
 	}
-	return n;*/
+	return n%_mida;*/
 }
 
 nat call_registry::hash_c(string nom) const{
@@ -93,10 +93,7 @@ call_registry::call_registry(const call_registry& R) throw(error){
 				taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
 				ant = taula_aux[i];
 			}
-			else {
-				ant->_seg = new node_hash(aux->_phone, ant->_seg);
-			}
-			
+			else ant->_seg = new node_hash(aux->_phone, ant->_seg);
 			aux = aux->_seg;
 		}
 	}
@@ -119,16 +116,12 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 					taula_aux[i] = new node_hash(aux->_phone, taula_aux[i]);
 					ant = taula_aux[i];
 				}
-				else {
-					ant->_seg = new node_hash(aux->_phone, ant->_seg);
-				}
-			
+				else ant->_seg = new node_hash(aux->_phone, ant->_seg);
 				aux = aux->_seg;
 			}
 		}
 		_taula = taula_aux;
 	}
-
 	return *this;
 }
 
@@ -154,7 +147,7 @@ void call_registry::registra_trucada(nat num) throw(error){
 		if (aux != NULL){
 			//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
 			if (aux->_phone.numero() == num) ++aux->_phone;			//sumo en un la frequencia
-			else { 													//creo un nou node amb freq 1 i sense num			
+			else { 													//creo un nou node amb freq 1 i sense num
 				phone nou_p(num, "", 1);
 				_taula[k] = new node_hash(nou_p, _taula[k]);
 				++_n_elements;
@@ -229,7 +222,7 @@ void call_registry::elimina(nat num) throw(error){
 	if(not trobat) throw error(ErrNumeroInexistent);
 }
 
-bool call_registry::conte(nat num) const throw(){	
+bool call_registry::conte(nat num) const throw(){
 	if (es_buit()) return false;
 	bool res = false;
 
@@ -327,8 +320,6 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 		}
 	}
 }
-
-
 
 
 /*		//imprimir taula
