@@ -10,13 +10,14 @@ void easy_dial::insereix(const phone& P){
   _arrel = rinsereix(_arrel, i, s, tlf, frequen);
 }
 
-easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, nat tlf, nat frequen) throw(error){
+easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, nat tlf, const nat frequen) throw(error){
   if(n==NULL){
     node_tst* ph = new node_tst;
     ph->_esq = ph->_dret = ph->_central = NULL;
     ph->_lletra = s[i];
     try {
-      if (i < s.length()-1) n->_central = rinsereix(n->_central, i+1, s, tlf, frequen);
+      if (i < s.length()-1) n->_central = rinsereix(n->_central, ++i, s, tlf, frequen);    //No compilaba amb i+1
+                                                                                          //no se si funciona amb ++i.
       else{                     //NOTA: el que diu als apunts [ i == s.length()-1; s[i] == Simbol() ]
         ph->_tlf = tlf;         //com que es ultim node li afegim tlf i freq que te
         ph->_freq = frequen;
@@ -30,7 +31,9 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, nat tlf
   else{
     if (n->_lletra > s[i]) n->_esq = rinsereix(n->_esq, i, s, tlf, frequen);
     else if (n->_lletra < s[i]) n->_dret = rinsereix(n->_dret, i, s, tlf, frequen);
-    else n->_central = rinsereix(n->_central, i+1, s, tlf, frequen);              // (n->_lletra == s[i])
+    else n->_central = rinsereix(n->_central, ++i, s, tlf, frequen);              // (n->_lletra == s[i])
+                                                                                  //No compilaba amb i+1,
+                                                                                  //no se si funciona amb ++i.
   }
   return n;
 
@@ -41,8 +44,8 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
   if (n != NULL){
     if (i < pref.size()) {  // busco el prefix primer
       if (pref[i] < n->_lletra) emplena_v(n->_esq, result, pref, i, aux);
-      else if (pref[i] == n->_lletra) emplena_v(n->_central, result, pref, i+1, aux);
-      else if (pref[i] > n->_lletra) emplena_v(n->_dret, result, pref, i, aux);
+      else if (pref[i] == n->_lletra) emplena_v(n->_central, result, pref, ++i, aux); //No compilaba amb i+1,
+      else if (pref[i] > n->_lletra) emplena_v(n->_dret, result, pref, i, aux);       //no se si funciona amb ++i.
     }
     else if (i >= pref.size()){   //recorro arbe fins a trobar \0 quan la trobo afegeixo aux al vector result
       if (n->_lletra != phone::ENDPREF){           //lletra != \0
