@@ -1,5 +1,6 @@
 struct node_tst{
-  char _lletra;
+  char _lletra;         //guarda la lletra que tracta
+  string _nom;          //guarda la resta del nom
   node_tst* _esq;
   node_tst* _central;
   node_tst* _dret;
@@ -9,8 +10,9 @@ struct node_tst{
 
 node_tst* _arrel;
 node_tst* _pref_n;
+node_tst* _pref_n_ant;    //per saber anterior
+bool _pref_indef;
 string _prefix;
-nat _n_elem;
 
 void insereix(const phone& P);
 node_tst* rinsereix(node_tst* n, nat &i, string s, nat tlf, nat freq) throw(error);
