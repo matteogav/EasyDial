@@ -7,6 +7,10 @@ call_registry::node_hash::node_hash(const phone &p, node_hash* seg){
 }
 
 nat call_registry::hash(nat x) const{
+	/*long y = (x * x * 31415926)%_mida;
+
+	return y;*/
+
 	nat y = x, n;
 	for(int i=1; y <= 0; ++i){
 		n = y%10 * i;
