@@ -1,47 +1,61 @@
 #include "easy_dial.hpp"
 #include <sstream>
 
-void easy_dial::insereix(const phone& P){
-  string s = P.nom();
-  s += phone::ENDPREF;
-  nat tlf = P.numero();
-  nat frequen = P.frequencia();
-  nat i=0;
-  _arrel = rinsereix(_arrel, i, s, tlf, frequen);
+void easy_dial::insereix(const phone& P, bool &arrel){
+  string s = P.nom() + phone::ENDPREF;
+  nat i = 0;
+  string ant = "";
+  _arrel = rinsereix(_arrel, i, s, P.nom(), P.numero(), arrel, ant);
 }
 
-easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, nat tlf, const nat frequen) throw(error){
+easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, const string &nom,
+                                          const nat &telef, bool &arrel, string &ant_ant) throw(error){
   if(n==NULL){
-    node_tst* ph = new node_tst;
-    ph->_esq = ph->_dret = ph->_central = NULL;
-    ph->_lletra = s[i];
+    node_tst* m = new node_tst;
+    m->_esq = m>_dret = m->_central = NULL;
+    m->_lletra = s[i];
     try {
-      if (i < s.length()-1) {
+      if(arrel){
+        m->maxFr = ant_ant;
+        m->antFr = nom;
+        m->_tlf = telef;
+        arrel = false;
         i++;
-        n->_central = rinsereix(n->_central, i, s, tlf, frequen);    //No compilaba amb i+1
-      } 
-                                                                                          //no se si funciona amb ++i.
-      else{                     //NOTA: el que diu als apunts [ i == s.length()-1; s[i] == Simbol() ]
-        ph->_tlf = tlf;         //com que es ultim node li afegim tlf i freq que te
-        ph->_freq = frequen;
+        m->_central = rinsereix(m->_central, i, s, ant_ant, telef, arrel, ant_ant);
+      }
+      else{
+        if (i <= s.length()) {
+          m->maxFr = nom;
+          m->antFr = ant_ant;
+          m->_tlf = telef;
+          ant_ant = m->maxFr;
+          //n->_freq = frequen;      //CAL???
+          nom = "";
+          i++;
+          m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant);
+        }
       }
     }
     catch (error) {
-      delete ph;
+      delete m;
       throw;
     }
   }
   else{
-    if (n->_lletra > s[i]) n->_esq = rinsereix(n->_esq, i, s, tlf, frequen);
-    else if (n->_lletra < s[i]) n->_dret = rinsereix(n->_dret, i, s, tlf, frequen);
+    if (n->_lletra > s[i]) n->_esq = rinsereix(n->_esq, i, s, nom, telef, arrel, n->antFr);
+    else if (n->_lletra < s[i]) n->_dret = rinsereix(n->_dret, i, s, nom, telef, arrel, n->antFr);
     else {
+      if(n->maxFr == ""){
+        n->maxFr = nom;
+        n->_tlf = telef;
+        ant_ant = n->maxFr;
+        nom = "";
+      }
       i++;
-      n->_central = rinsereix(n->_central, i, s, tlf, frequen);              // (n->_lletra == s[i])
+      n->_central = rinsereix(n->_central, i, s, nom, telef, arrel, ant_ant);     // (n->_lletra == s[i])
     }
-                                                                                  //No compilaba amb i+1,
-                                                                                  //no se si funciona amb ++i.
   }
-  return n;
+  return m;
 
 }
 
@@ -102,10 +116,10 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
   cout << R.num_entrades()<<endl;
   vector<phone> v;
   R.dump(v);
-
+  bool arr = true;
   //ordenar vector per frequencia mes alta a mes baixa, he triat mergesort
-
-  for(nat i = 0; i<v.size(); ++i) insereix(v[i]);
+  if(v.size() > 0) _nom_arrel = v[0].nom()
+  for(nat i = 0; i<v.size(); ++i) insereix(v[i], arr);
   _arrel = NULL;
   _pref_n = NULL;
   _pref_n_ant = NULL;
@@ -138,7 +152,7 @@ string easy_dial::inici() throw(){
   _prefix = "";
   _pref_indef = false;
   string res = "";
-  
+
   if (_arrel != NULL){
     _pref_n = _arrel;
     // res = _pref_n->_nom;   //si posem nom al primer node que poguem
@@ -188,7 +202,7 @@ string easy_dial::anterior() throw(error){
     _pref_indef = true;
     throw error(ErrNoHiHaAnterior);
   }
-  
+
   _prefix.erase(_prefix.size() - 1);      //treure una lletra del prefix
 }
 
