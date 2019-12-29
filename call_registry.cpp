@@ -6,17 +6,20 @@ call_registry::node_hash::node_hash(const phone &p, node_hash* seg){
 	_seg = seg;
 }
 
-nat call_registry::hash(nat x) const{
-	long y = (x * x * 31415926)%_mida;
+nat call_registry::hash(const nat &x) const{
+	/*long y = (x * x * 31415926)%_mida;
 
-	return y;
+	return y;*/
 
-	/*nat y = x, n;
-	for(int i=1; y <= 0; ++i){
-		n = y%10 * i;
+	nat y = x;
+	nat n = 0;
+	int i = 1;
+	for(i; y > 9; ++i){
+		n += y%10 * i;
 		y = y/10;
 	}
-	return n%_mida;*/
+	n += y * i;
+	return n%_mida;
 }
 
 nat call_registry::hash_c(string nom) const{

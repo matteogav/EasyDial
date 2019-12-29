@@ -8,7 +8,7 @@ node_hash** _taula;
 nat _mida;
 nat _n_elements;
 
-nat hash(nat num) const;		//funcio de hash
+nat hash(const nat &num) const;		//funcio de hash
 nat hash_c(string nom) const;
 void rehash();
 node_hash* consulta(nat num, nat &k) const;
