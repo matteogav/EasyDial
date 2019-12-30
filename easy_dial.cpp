@@ -286,13 +286,7 @@ nat easy_dial::num_telf() const throw(error){
   /* Possible solucio */
   if (_pref_indef == true) throw error(ErrPrefixIndef);
   else if (_arrel == NULL) throw error(ErrNoExisteixTelefon);
-  else {
-    node_tst* aux = _pref_n;
-    while (aux->_lletra != phone::ENDPREF){
-      aux = aux->_central;
-    }
-    return aux->_tlf;
-  }
+  else return _pref_n->_tlf;
 }
 
 void easy_dial::comencen(const string& pref, vector<string>& result) const throw(error){
