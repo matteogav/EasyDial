@@ -238,6 +238,7 @@ string easy_dial::inici() throw(){
     _pref_n = _arrel;
     res = _arrel->antFr;
   }
+  else es_buit = true;
   return res;
 }
 

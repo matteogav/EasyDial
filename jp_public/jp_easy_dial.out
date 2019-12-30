@@ -233,16 +233,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -254,16 +254,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -275,16 +275,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #anterior
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -296,16 +296,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #anterior
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -570,16 +570,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -591,16 +591,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -612,16 +612,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent Z
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #anterior
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
@@ -633,16 +633,16 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 
 ##
 #seguent ""
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #anterior
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #inici
 
