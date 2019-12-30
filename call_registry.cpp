@@ -14,7 +14,7 @@ nat call_registry::hash(const nat &x) const{
 	nat y = x;
 	nat n = 0;
 	int i = 1;
-	for(i; y > 9; ++i){
+	for(; y > 9; ++i){
 		n += y%10 * i;
 		y = y/10;
 	}

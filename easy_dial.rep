@@ -16,8 +16,8 @@ node_tst* _pref_n_ant;    //per saber anterior
 bool _pref_indef;
 string _prefix;
 
-void insereix(const phone& P);
-node_tst* rinsereix(node_tst* n, nat &i, string s, const phone &P, bool &arrel, string ant_ant) throw(error);
+void insereix(const phone& P, bool &arr);
+node_tst* rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string &ant_ant) throw(error);
 void esborra_tst(node_tst* n) throw();
 node_tst* copia_tst(node_tst* n) throw(error);
 void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) const throw();
