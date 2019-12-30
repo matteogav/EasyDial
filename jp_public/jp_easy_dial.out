@@ -1253,10 +1253,10 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1269,10 +1269,10 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1285,16 +1285,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1307,16 +1307,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1329,13 +1329,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent O
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent S
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1348,13 +1348,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent O
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent J
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1371,16 +1371,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1390,16 +1390,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1409,16 +1409,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1428,25 +1428,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1456,25 +1456,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1484,25 +1484,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent O
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1512,25 +1512,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1548,16 +1548,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 ###!
 ###!
@@ -1569,16 +1569,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1001
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 ###!
 ###!
@@ -1689,13 +1689,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1708,10 +1708,10 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent O
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1724,16 +1724,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1746,16 +1746,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1768,13 +1768,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1787,16 +1787,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1813,16 +1813,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1832,16 +1832,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1851,16 +1851,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1870,25 +1870,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1898,25 +1898,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1926,25 +1926,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -1962,16 +1962,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 ###!
 ###!--------------------------------------------------
@@ -1982,16 +1982,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 ###!
 ###!
@@ -2106,13 +2106,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2125,16 +2125,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2147,16 +2147,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2169,13 +2169,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Q
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2188,19 +2188,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -2211,16 +2211,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2230,16 +2230,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2249,25 +2249,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2277,25 +2277,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2305,25 +2305,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2341,16 +2341,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 ###!
 ###!--------------------------------------------------
@@ -2361,16 +2361,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 ###!
 ###!
@@ -2468,32 +2468,32 @@ MIQUEL
 MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MIQUEL
-##MIQUEL
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MIQUEL
+##MIQUEL
+#num_telf
+1001
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2506,16 +2506,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2528,16 +2528,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2550,13 +2550,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2569,19 +2569,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -2592,16 +2592,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2611,16 +2611,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2630,25 +2630,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2658,25 +2658,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2686,25 +2686,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2722,16 +2722,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 ###!
 ###!--------------------------------------------------
@@ -2742,16 +2742,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 ###!
 ###!
@@ -2854,32 +2854,32 @@ MIQUEL
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MARIA
-##MARIA
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MARIA
+##MARIA
+#num_telf
+1002
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2892,16 +2892,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2914,16 +2914,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2936,13 +2936,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2955,19 +2955,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -2978,16 +2978,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -2997,16 +2997,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3016,25 +3016,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3044,25 +3044,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3072,25 +3072,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3108,16 +3108,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 ###!
 ###!--------------------------------------------------
@@ -3128,16 +3128,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 ###!
 ###!
@@ -3223,32 +3223,32 @@ MARTA
 MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MARTA
-##MARTA
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MARTA
+##MARTA
+#num_telf
+1001
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3261,16 +3261,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3283,16 +3283,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3305,13 +3305,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3324,19 +3324,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -3347,16 +3347,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3366,16 +3366,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3385,25 +3385,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3413,25 +3413,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3441,25 +3441,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3477,16 +3477,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 ###!
 ###!--------------------------------------------------
@@ -3497,16 +3497,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 ###!
 ###!
@@ -3597,32 +3597,32 @@ MARTA
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MARIA
-##MARIA
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MARIA
+##MARIA
+#num_telf
+1002
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3635,16 +3635,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3657,16 +3657,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3679,13 +3679,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3698,19 +3698,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -3721,16 +3721,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3740,16 +3740,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3759,25 +3759,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3787,25 +3787,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3815,25 +3815,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3851,16 +3851,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 ###!
 ###!--------------------------------------------------
@@ -3871,16 +3871,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 ###!
 ###!
@@ -3958,32 +3958,32 @@ MARIA
 MAR
 ##MAR
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MAR
-##MAR
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MAR
+##MAR
+#num_telf
+1001
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -3996,16 +3996,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4018,16 +4018,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4040,13 +4040,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4059,19 +4059,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4082,16 +4082,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4101,16 +4101,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4120,25 +4120,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4148,25 +4148,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4176,25 +4176,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4212,16 +4212,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 ###!
 ###!--------------------------------------------------
@@ -4232,16 +4232,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MAR
 ##MAR
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 ###!
 ###!
@@ -4325,32 +4325,32 @@ MARIA
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-MARIA
-##MARIA
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+MARIA
+##MARIA
+#num_telf
+1002
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4363,16 +4363,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4385,16 +4385,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4407,13 +4407,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4426,19 +4426,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4449,16 +4449,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4468,16 +4468,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4487,25 +4487,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4515,25 +4515,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4543,25 +4543,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4579,16 +4579,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 ###!
 ###!--------------------------------------------------
@@ -4599,16 +4599,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1001
 ###!
 #d destroy
@@ -4681,32 +4681,32 @@ MARIA
 M
 ##M
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
-#seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-#num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
-##Error::easy_dial:31:Prefix en curs indefinit.
-###!
-#inici
-M
-##M
 #num_telf
 Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+#seguent Z
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+#num_telf
+Error::easy_dial:31:Prefix en curs indefinit.
+##Error::easy_dial:31:Prefix en curs indefinit.
+###!
+#inici
+M
+##M
+#num_telf
+1001
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4719,16 +4719,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4741,16 +4741,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4763,13 +4763,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent R
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4782,19 +4782,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4805,16 +4805,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4824,16 +4824,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4843,25 +4843,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4871,25 +4871,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4899,25 +4899,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -4935,16 +4935,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1002
 ###!
 ###!--------------------------------------------------
@@ -4955,16 +4955,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 M
 ##M
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1001
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+M
 ##M
 ###!
 #d destroy
@@ -5044,26 +5044,26 @@ MARIA
 ALEX
 ##ALEX
 #seguent K
-Error::easy_dial:31:Prefix en curs indefinit.
+K
 ##K
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 ###!           si afegim ENDPREF ens treu el telefon K
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+K
 ##K
 #seguent 2
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##K2
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##1002
 ###!          si afegim ENDPREF ens treu el telefon K2
 #seguent ""
@@ -5118,13 +5118,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5137,13 +5137,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5156,13 +5156,13 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent O
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5175,19 +5175,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5200,19 +5200,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5225,19 +5225,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Q
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5250,19 +5250,19 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent I
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5275,25 +5275,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5306,25 +5306,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5337,25 +5337,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5368,31 +5368,31 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5405,37 +5405,37 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent Z
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5448,37 +5448,37 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent ""
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5491,37 +5491,37 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #seguent T
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5534,37 +5534,37 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5577,31 +5577,31 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5614,31 +5614,31 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #seguent T
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5672,16 +5672,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5691,16 +5691,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5710,16 +5710,16 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent J
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5729,25 +5729,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5757,25 +5757,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5785,25 +5785,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5813,25 +5813,25 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5841,34 +5841,34 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5878,34 +5878,34 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5915,34 +5915,34 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5952,43 +5952,43 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -5998,49 +5998,49 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent Z
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6050,49 +6050,49 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6102,49 +6102,49 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6154,49 +6154,49 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6206,43 +6206,43 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent I
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6252,43 +6252,43 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent T
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 ##Error::easy_dial:33:No es pot eliminar caracter en el prefix en curs.
 #num_telf
 Error::easy_dial:31:Prefix en curs indefinit.
@@ -6307,46 +6307,46 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 ###!
 ###!--------------------------------------------------
@@ -6357,49 +6357,49 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 ###!
 ###!--------------------------------------------------
@@ -6410,67 +6410,67 @@ Error::easy_dial:31:Prefix en curs indefinit.
 JOSEP
 ##JOSEP
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1001
 ##1001
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1002
 ##1002
 #seguent M
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+MAR
 ##MAR
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1003
 ##1003
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1004
 ##1004
 #seguent A
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #seguent R
-Error::easy_dial:31:Prefix en curs indefinit.
+MARTA
 ##MARTA
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+1005
 ##1005
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MARIA
 ##MARIA
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+MIQUEL
 ##MIQUEL
 #anterior
-Error::easy_dial:31:Prefix en curs indefinit.
+JOSEP
 ##JOSEP
 ###!
 ###!

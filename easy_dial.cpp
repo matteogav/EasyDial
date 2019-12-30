@@ -36,7 +36,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
           m->antFr = ant_ant;
           m->_tlf = telef;
           ant_ant = m->maxFr;
-					m->_pare = n;
+					m->_pare = res;
           nom = "";
           i++;
           //cout<<"el pare de "<<m->_lletra <<"es:";
@@ -234,6 +234,8 @@ string easy_dial::inici() throw(){
   _prefix = "";
   string res = "";
   _pref_indef = false;
+  null_pref_n = false;
+  es_buit = false;
   if (_arrel != NULL){
     _pref_n = _arrel;
     res = _arrel->antFr;
@@ -244,26 +246,27 @@ string easy_dial::inici() throw(){
 
 string easy_dial::seguent(char c) throw(error){
   /* si introdueix dos cops seguit string buit, tira error pref indef i */
-
-  if (_pref_indef == true) throw error(ErrPrefixIndef);
+  //cout<<"Pref indef: "<<_pref_indef<<endl;
+  if (_pref_indef) throw error(ErrPrefixIndef);
   else if (null_pref_n or es_buit) {
     _pref_indef = true;
     throw error(ErrPrefixIndef);
   }
   _prefix += c;
+  //cout<<"Prefix: "<<_prefix<<endl;
   string res="";
 
   if (_pref_n != NULL){
-    if (_pref_n != _arrel){
-      _pref_n = _pref_n ->_central;
-    }
     bool trobat = false;
     node_tst* aux = _pref_n;
-
-    while (aux != NULL and not trobat){
-      if (aux->_lletra == c) trobat = true;
-      else if (aux->_lletra > c) aux = aux->_esq;
-      else if (aux->_lletra < c) aux = aux->_dret;
+    if (_pref_n != _arrel) aux = aux->_central;
+    if (aux->_lletra != phone::ENDPREF){
+        while (aux != NULL and not trobat){
+        //cout<<"aux lletra: "<<aux->_lletra<<endl;
+        if (aux->_lletra == c) trobat = true;
+        else if (aux->_lletra > c) aux = aux->_esq;
+        else if (aux->_lletra < c) aux = aux->_dret;
+      }
     }
     if (trobat){
       _pref_n = aux;
@@ -293,8 +296,11 @@ string easy_dial::anterior() throw(error){
 
     if (_prefix != ""){
       if (not null_pref_n){
-        res = _pref_n->antFr;
-        while (_pref_n->maxFr != res) _pref_n = _pref_n->_pare;
+        string ultima = _prefix.substr(_prefix.length()-1, 1);
+        while (_pref_n->_lletra != ultima[0]) _pref_n = _pref_n->_pare;
+        res = _pref_n->maxFr;
+        /*string ultima = _prefix.substr(_prefix.length()-1, 1);
+        while (_pref_n->_lletra != ultima[0]) _pref_n = _pref_n->_pare;*/
       }
       else {
         null_pref_n = false;
