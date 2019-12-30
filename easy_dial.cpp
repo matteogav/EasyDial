@@ -9,32 +9,39 @@ void easy_dial::insereix(const phone& P, bool &arrel){
   string nom = P.nom();
   nat tlf = P.numero();
   _arrel = rinsereix(_arrel, i, s, nom, tlf, arrel, ant);
+  //cout << "ARREL_AF:" << _arrel->antFr<<endl;
 }
 
-easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string &ant_ant) throw(error){
+easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant) throw(error){
   if(n==NULL){
-    node_tst* m = new node_tst;
-    m->_esq = m->_dret = m->_central = NULL;
-    m->_lletra = s[i];
+    node_tst* n = new node_tst;
+    n->_esq = n->_dret = n->_central = NULL;
+    n->_lletra = s[i];
     try {
       if(arrel){
-        m->maxFr = ant_ant;
-        m->antFr = nom;
-        m->_tlf = telef;
+        n->maxFr = ant_ant;
+        n->antFr = nom;
+        n->_tlf = telef;
         arrel = false;
         i++;
-        m->_central = rinsereix(m->_central, i, s, ant_ant, telef, arrel, ant_ant);
+        n->_central = rinsereix(n->_central, i, s, ant_ant, telef, arrel, ant_ant);
+        /*cout<<"r_inser_arrel_nom:"<<nom<<endl;
+				cout<<"r_inser_arrel_mF:"<<n->maxFr<< "."<<endl;
+				cout<<"r_inser_arrel_aF:"<<n->antFr<< "."<<endl;*/
       }
       else{
-        if (i < s.length()-1) {
-          m->maxFr = nom;
-          m->antFr = ant_ant;
-          m->_tlf = telef;
-          ant_ant = m->maxFr;
+        if (i < s.length()) {
+          n->maxFr = nom;
+          n->antFr = ant_ant;
+          n->_tlf = telef;
+          ant_ant = n->maxFr;
           //n->_freq = frequen;      //CAL???
           nom = "";
           i++;
-          m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant);
+          n->_central = rinsereix(n->_central, i, s, nom, telef, arrel, ant_ant);
+          /*cout<<"r_inser_nom:"<<nom<<endl;
+					cout<<"r_inser_mF:"<<n->maxFr<< "."<<endl;
+					cout<<"r_inser_aF:"<<n->antFr<< "."<<endl;*/
         }
       }
     }
@@ -42,22 +49,22 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
       delete n;
       throw;
     }
-    cout <<"lletra"<<m->_lletra<<endl;
-    return m;
+    return n;
   }
   else{
     if (n->_lletra > s[i]) n->_esq = rinsereix(n->_esq, i, s, nom, telef, arrel, n->antFr);
-    else if (n->_lletra < s[i]) n->_dret = rinsereix(n->_dret, i, s, nom, telef, arrel, n->antFr);
+    else if (n->_lletra < s[i]) n->_dret = rinsereix(n->_dret, i, s, nom, telef, arrel, n->antFr);		
     else {
       if(n->maxFr == ""){
         n->maxFr = nom;
         n->_tlf = telef;
-        ant_ant = n->maxFr;
         nom = "";
       }
+      ant_ant = n->maxFr;
       i++;
       n->_central = rinsereix(n->_central, i, s, nom, telef, arrel, ant_ant);     // (n->_lletra == s[i])
     }
+    return n;
   }
 }
 
@@ -123,10 +130,18 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
   //ordenar vector per frequencia mes alta a mes baixa, he triat mergesort
    if(v.size() > 0){
      _nom_arrel = v[0].nom();
-     for(unsigned int i = 0; i<v.size(); ++i) insereix(v[i], arr);
+		/*for(unsigned int i = 0; i<v.size(); ++i){
+			 cout <<"vector["<<i<< "]: "<<(v[i].nom())<<endl;
+     }*/
+     for(unsigned int i = 0; i<v.size(); ++i){
+       //cout <<"vector: "<<(v[i].nom())<<endl;
+			 insereix(v[i], arr);
+     }
+     /*cout << "_nom_arrel:" << _nom_arrel<<endl;
+     cout << "__arrel:" << _arrel->_lletra<<endl;
+     cout << "_arrel_aaaF:" << _arrel->antFr<<endl;
+		*/
    }
-  cout << "_nom_arrel:" << _nom_arrel<<endl;
-  cout << "_nom_arrel:" << _arrel->antFr<<endl;
   _pref_n = NULL;
   _pref_n_ant = NULL;
   _pref_indef = true;   //el prefix en curs queda indefinit
@@ -159,14 +174,8 @@ string easy_dial::inici() throw(){
   _pref_indef = false;
   string res = "";
   if (_arrel != NULL){
-    cout <<"aqui"<<endl;
     _pref_n = _arrel;
-    // res = _pref_n->_nom;   //si posem nom al primer node que poguem
-    node_tst* n = _pref_n;
-    while (n->_lletra != phone::ENDPREF){       //cost el numero de lletres que te la persona mes
-      res += n->_lletra;                        //frequent de l'agenda
-      n = n->_central;
-    }
+    res = _arrel->antFr;
   }
   return res;
 }
