@@ -80,7 +80,7 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
         i++;
         emplena_v(n->_central, result, pref, i, aux); //No compilaba amb i+1,
       }
-      else if (pref[i] > n->_lletra) emplena_v(n->_dret, result, pref, i, aux);       //no se si funciona amb ++i.
+      else if (pref[i] > n->_lletra) emplena_v(n->_dret, result, pref, i, aux);
     }
     else if (i >= pref.size()){   //recorro arbe fins a trobar \0 quan la trobo afegeixo aux al vector result
       if (n->_lletra != phone::ENDPREF){           //lletra != \0
@@ -232,8 +232,8 @@ easy_dial::~easy_dial() throw(){
 string easy_dial::inici() throw(){
   /* Cost constant?*/
   _prefix = "";
-  _pref_indef = false;
   string res = "";
+  _pref_indef = false;
   if (_arrel != NULL){
     _pref_n = _arrel;
     res = _arrel->antFr;
@@ -242,30 +242,38 @@ string easy_dial::inici() throw(){
 }
 
 string easy_dial::seguent(char c) throw(error){
-  /* Cost constant?*/
   /* si introdueix dos cops seguit string buit, tira error pref indef i */
 
   if (_pref_indef == true) throw error(ErrPrefixIndef);
-  else if (_pref_n == NULL) {
+  else if (null_pref_n or es_buit) {
     _pref_indef = true;
     throw error(ErrPrefixIndef);
   }
   _prefix += c;
   string res="";
-  /*_pref_n_ant = _pref_n;
-  _pref_n = _pref_n->_central;
-
 
   if (_pref_n != NULL){
-    bool trobat = false;
-
-    while (_pref_n != NULL and not trobat){
-      if (_pref_n->_lletra == c) trobat = true;
-      else if (_pref_n->_lletra < c) _pref_n = _pref_n->_esq;
-      else if (_pref_n->_lletra > c) _pref_n = _pref_n->_dret;
+    if (_pref_n != _arrel){
+      _pref_n = _pref_n ->_central;
     }
-    if (trobat) res = _prefix + _pref_n->_nom;
-  }*/
+    bool trobat = false;
+    node_tst* aux = _pref_n;
+
+    while (aux != NULL and not trobat){
+      if (aux->_lletra == c) trobat = true;
+      else if (aux->_lletra > c) aux = aux->_esq;
+      else if (aux->_lletra < c) aux = aux->_dret;
+    }
+    if (trobat){
+      _pref_n = aux;
+      res = _pref_n->maxFr;
+      if (res == "") es_buit = true;
+    }
+    else {
+      null_pref_n = true;
+      res = "";
+    }
+  }
 
   return res;
 }
@@ -277,8 +285,31 @@ string easy_dial::anterior() throw(error){
     _pref_indef = true;
     throw error(ErrNoHiHaAnterior);
   }
+  string res = "";
+  if (_arrel != NULL) {
+    if (_prefix.size() == 1) _prefix = "";
+    else if (_prefix.size() > 1) _prefix.erase(_prefix.size() - 1);      //treure una lletra del prefix
 
-  _prefix.erase(_prefix.size() - 1);      //treure una lletra del prefix
+    if (_prefix != ""){
+      if (not null_pref_n){
+        res = _pref_n->antFr;
+        while (_pref_n->maxFr != res) _pref_n = _pref_n->_pare;
+      }
+      else {
+        null_pref_n = false;
+        res = _pref_n->maxFr;      //si el pref_n en seguent havia anat a null
+      }
+    }
+    else {                  //si prefix queda a 0 arrel
+      _pref_n = _arrel;
+      null_pref_n = false;
+      res = _pref_n->antFr;
+    }
+    es_buit = false;
+  }
+  
+  
+  return res;
 }
 
 nat easy_dial::num_telf() const throw(error){
@@ -286,7 +317,10 @@ nat easy_dial::num_telf() const throw(error){
   /* Possible solucio */
   if (_pref_indef == true) throw error(ErrPrefixIndef);
   else if (_arrel == NULL) throw error(ErrNoExisteixTelefon);
-  else return _pref_n->_tlf;
+  else {
+    if (null_pref_n or es_buit) throw error(ErrNoExisteixTelefon);
+    else return _pref_n->_tlf;
+  }
 }
 
 void easy_dial::comencen(const string& pref, vector<string>& result) const throw(error){
@@ -299,5 +333,6 @@ void easy_dial::comencen(const string& pref, vector<string>& result) const throw
 }
 
 double easy_dial::longitud_mitjana() const throw(){
-
+  double res = 0.0;
+  return res;
 }

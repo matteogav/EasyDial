@@ -14,6 +14,8 @@ string _nom_arrel;
 node_tst* _pref_n;
 node_tst* _pref_n_ant;    //per saber anterior
 bool _pref_indef;
+bool null_pref_n;         //indicar que el pref_n hauria anat a NULL
+bool es_buit;             //indicar que el seguent ha donat string buida
 string _prefix;
 
 void insereix(const phone& P, bool &arr);
