@@ -21,3 +21,6 @@ node_tst* rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef
 void esborra_tst(node_tst* n) throw();
 node_tst* copia_tst(node_tst* n) throw(error);
 void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) const throw();
+void ordena(vector<phone> &v, int n) throw();
+void partir(vector<phone> &v, vector<phone> &v2, int m) throw();
+void fusionar(vector<phone> &v, vector<phone> &v2) throw();

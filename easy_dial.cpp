@@ -122,26 +122,88 @@ easy_dial::node_tst* easy_dial::copia_tst(node_tst* n) throw(error){
   return n;
 }
 
+void easy_dial::partir(vector<phone> &v, vector<phone> &v2, int m) throw(){
+  int i = v.size();
+  while (i > m){
+    v2.insert(v2.begin(), v.back());
+    v.pop_back();
+    --i;
+  }
+}
+
+void easy_dial::fusionar(vector<phone> &v, vector<phone> &v2) throw(){
+  if (v.size() == 0) v = v2;
+  if (v.size() > 0 and v2.size() > 0){
+    vector<phone>::iterator it_v = v.begin();
+    vector<phone>::iterator it_v2 = v2.begin();
+    vector<phone> res;
+    bool v_acabat = false, v2_acabat = false;
+
+    while (not v_acabat and not v2_acabat){
+      if (*it_v2 < *it_v){
+        res.push_back(*it_v);
+        ++it_v;
+      }
+      else if (*it_v2 >= *it_v){
+        res.push_back(*it_v2);
+        ++it_v2;
+      }
+
+      if (it_v == v.end()) v_acabat = true;
+      if (it_v2 == v2.end()) v2_acabat = true;
+    }
+    if (v_acabat){
+      while (it_v2 != v2.end()){
+        res.push_back(*it_v2);
+        ++it_v2;
+      }
+    }
+    else if (v2_acabat){
+      while (it_v != v.end()){
+        res.push_back(*it_v);
+        ++it_v;
+      }
+    }
+    v = res;
+  }
+}
+
+void easy_dial::ordena(vector<phone> &v, int n) throw(){
+  vector<phone> v2;
+  if (n>1){
+    nat m = n / 2;
+    partir(v,v2,m);
+    ordena(v,m);
+    ordena(v2,n-m);
+    fusionar(v,v2);
+  }
+}
+
 easy_dial::easy_dial(const call_registry& R) throw(error){
   vector<phone> v;
   R.dump(v);
   bool arr = true;
   _arrel = NULL;
-  //ordenar vector per frequencia mes alta a mes baixa, he triat mergesort
-   if(v.size() > 0){
-     _nom_arrel = v[0].nom();
-		/*for(unsigned int i = 0; i<v.size(); ++i){
+
+  cout<<"v.size() "<<v.size()<<endl;
+
+  if(v.size() > 0){
+    //ordenar vector per frequencia mes alta a mes baixa, he triat mergesort
+    ordena(v,v.size());
+
+    _nom_arrel = v[0].nom();
+		for(unsigned int i = 0; i<v.size(); ++i){
 			 cout <<"vector["<<i<< "]: "<<(v[i].nom())<<endl;
-     }*/
-     for(unsigned int i = 0; i<v.size(); ++i){
-       //cout <<"vector: "<<(v[i].nom())<<endl;
-			 insereix(v[i], arr);
-     }
-     /*cout << "_nom_arrel:" << _nom_arrel<<endl;
-     cout << "__arrel:" << _arrel->_lletra<<endl;
-     cout << "_arrel_aaaF:" << _arrel->antFr<<endl;
+    }
+    for(unsigned int i = 0; i<v.size(); ++i){
+      //cout <<"vector: "<<(v[i].nom())<<endl;
+		 insereix(v[i], arr);
+    }
+    /*cout << "_nom_arrel:" << _nom_arrel<<endl;
+    cout << "__arrel:" << _arrel->_lletra<<endl;
+    cout << "_arrel_aaaF:" << _arrel->antFr<<endl;
 		*/
-   }
+  }
   _pref_n = NULL;
   _pref_n_ant = NULL;
   _pref_indef = true;   //el prefix en curs queda indefinit
