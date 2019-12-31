@@ -288,7 +288,7 @@ string easy_dial::seguent(char c) throw(error){
         while (aux != NULL and not trobat){
         if (aux->_lletra == c) trobat = true;
         else if (aux->_lletra > c) aux = aux->_esq;
-        else if (aux->_lletra < c) aux = aux->_dret;
+				else aux = aux->_dret;
       }
     }
     else {
