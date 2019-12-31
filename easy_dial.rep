@@ -11,6 +11,7 @@ struct node_tst{
 
 node_tst* _arrel;
 string _nom_arrel;
+nat _tlf_arrel;
 node_tst* _pref_n;
 node_tst* _pref_n_ant;    //per saber anterior
 bool _pref_indef;

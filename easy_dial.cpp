@@ -193,6 +193,7 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
     ordena(v,v.size());
 
     _nom_arrel = v[0].nom();
+    _tlf_arrel = v[0].numero();
 		//for(unsigned int i = 0; i<v.size(); ++i) cout <<"vector["<<i<< "]: "<<(v[i].nom())<<endl;
     for(unsigned int i = 0; i<v.size(); ++i){
       //cout <<"vector: "<<(v[i].nom())<<endl;
@@ -326,7 +327,10 @@ nat easy_dial::num_telf() const throw(error){
   else if (_arrel == NULL) throw error(ErrNoExisteixTelefon);
   else {
     if (null_pref_n or es_buit) throw error(ErrNoExisteixTelefon);
-    else return _pref_n->_tlf;
+    else {
+      if (_prefix == "") return _tlf_arrel;
+      else return _pref_n->_tlf;
+    }
   }
 }
 
