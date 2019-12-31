@@ -39,7 +39,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
 					m->_pare = res;
           nom = "";
           i++;
-          //cout<<"el pare de "<<m->_lletra <<"es:";
+          //cout<<"el pare de "<<m->_lletra<<" de maxFr: "<<m->maxFr<<" es: ";
 					//if (res!=NULL) cout<<res->_lletra<<" ."<<endl;
           m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m);
           /*cout<<"r_inser_nom:"<<nom<<endl;
@@ -88,15 +88,22 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
         if (n->_central != NULL)
         {
           aux += n->_lletra;
+          //cout<<"aux: "<<aux<<endl;
           emplena_v(n->_central, result, pref, i, aux);
+          if (aux != pref) {
+            aux.erase(aux.size() - 1);
+            //cout<<"aux erase: "<<aux<<endl;
+          }
         }
         if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
+        /*if (aux != pref) {
+          aux.erase(aux.size() - 1);
+          //cout<<"aux erase: "<<aux<<endl;
+        }*/
       }
       else if (n->_lletra == phone::ENDPREF) {
         result.push_back(aux);
-      }
-      if (aux != pref) {
-        aux.erase(aux.size() - 1);
+        if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
       }
     }
   }
@@ -205,7 +212,6 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
 		*/
   }
   _pref_n = NULL;
-  _pref_n_ant = NULL;
   _pref_indef = true;   //el prefix en curs queda indefinit
 }
 
@@ -213,7 +219,6 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
 easy_dial::easy_dial(const easy_dial& D) throw(error){
   _prefix = D._prefix;
   _pref_n = D._pref_n;
-  _pref_n_ant = D._pref_n_ant;
   _pref_indef = D._pref_indef;
   _arrel = copia_tst(D._arrel);
 }
@@ -247,26 +252,29 @@ string easy_dial::inici() throw(){
 
 string easy_dial::seguent(char c) throw(error){
   /* si introdueix dos cops seguit string buit, tira error pref indef i */
-  //cout<<"Pref indef: "<<_pref_indef<<endl;
   if (_pref_indef) throw error(ErrPrefixIndef);
   else if (null_pref_n or es_buit) {
     _pref_indef = true;
     throw error(ErrPrefixIndef);
   }
   _prefix += c;
-  //cout<<"Prefix: "<<_prefix<<endl;
   string res="";
 
   if (_pref_n != NULL){
     bool trobat = false;
     node_tst* aux = _pref_n;
-    if (_pref_n != _arrel) aux = aux->_central;
+    if (_prefix.length() > 1) aux = aux->_central;
     if (aux->_lletra != phone::ENDPREF){
         while (aux != NULL and not trobat){
-        //cout<<"aux lletra: "<<aux->_lletra<<endl;
         if (aux->_lletra == c) trobat = true;
         else if (aux->_lletra > c) aux = aux->_esq;
         else if (aux->_lletra < c) aux = aux->_dret;
+      }
+    }
+    else {
+      if (aux->_dret != NULL) {
+        aux = aux->_dret;
+        if (aux->_lletra == c) trobat = true;
       }
     }
     if (trobat){
@@ -300,8 +308,6 @@ string easy_dial::anterior() throw(error){
         string ultima = _prefix.substr(_prefix.length()-1, 1);
         while (_pref_n->_lletra != ultima[0]) _pref_n = _pref_n->_pare;
         res = _pref_n->maxFr;
-        /*string ultima = _prefix.substr(_prefix.length()-1, 1);
-        while (_pref_n->_lletra != ultima[0]) _pref_n = _pref_n->_pare;*/
       }
       else {
         null_pref_n = false;
@@ -321,8 +327,6 @@ string easy_dial::anterior() throw(error){
 }
 
 nat easy_dial::num_telf() const throw(error){
-  /* Cost constant?*/
-  /* Possible solucio */
   if (_pref_indef == true) throw error(ErrPrefixIndef);
   else if (_arrel == NULL) throw error(ErrNoExisteixTelefon);
   else {

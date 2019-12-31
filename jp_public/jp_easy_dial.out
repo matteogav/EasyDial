@@ -2191,16 +2191,16 @@ MARIA
 MIQUEL
 ##MIQUEL
 #seguent M
-MIQUEL
+
 ##
 #num_telf
-1002
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent I
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -2572,16 +2572,16 @@ MIQUEL
 MARIA
 ##MARIA
 #seguent M
-MARIA
+
 ##
 #num_telf
-1001
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -2764,7 +2764,7 @@ MIQUEL
 #init d easy_dial rc
 ###!
 #comencen ""
-MARIA IQUEL 
+MARIA MIQUEL 
 ##MARIA MIQUEL 
 #comencen "Z"
 
@@ -2958,16 +2958,16 @@ MARIA
 MARTA
 ##MARTA
 #seguent M
-MARTA
+
 ##
 #num_telf
-1002
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -3327,16 +3327,16 @@ MARTA
 MARIA
 ##MARIA
 #seguent M
-MARIA
+
 ##
 #num_telf
-1001
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -3519,13 +3519,13 @@ MARTA
 #init d easy_dial rc
 ###!
 #comencen ""
-MARIA MATA 
+MARIA MARTA 
 ##MARIA MARTA 
 #comencen "Z"
 
 ##
 #comencen "M"
-MARIA MATA 
+MARIA MARTA 
 ##MARIA MARTA 
 #comencen "MAZ"
 
@@ -3701,16 +3701,16 @@ MARIA
 MAR
 ##MAR
 #seguent M
-MAR
+
 ##
 #num_telf
-1002
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -3893,13 +3893,13 @@ MARIA
 #init d easy_dial rc
 ###!
 #comencen ""
-MAR MAIA 
+MAR MARIA 
 ##MAR MARIA 
 #comencen "Z"
 
 ##
 #comencen "M"
-MAR MAIA 
+MAR MARIA 
 ##MAR MARIA 
 #comencen "MAZ"
 
@@ -4062,16 +4062,16 @@ MAR
 MARIA
 ##MARIA
 #seguent M
-MARIA
+
 ##
 #num_telf
-1001
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4254,19 +4254,19 @@ MAR
 #init d easy_dial rc
 ###!
 #comencen ""
-MAR 
+MAR MARIA 
 ##MAR MARIA 
 #comencen "Z"
 
 ##
 #comencen "M"
-MAR 
+MAR MARIA 
 ##MAR MARIA 
 #comencen "MAZ"
 
 ##
 #comencen "MAR"
-MAR 
+MAR MARIA 
 ##MAR MARIA 
 #comencen "MARZ"
 
@@ -4429,16 +4429,16 @@ MARIA
 M
 ##M
 #seguent M
-M
+
 ##
 #num_telf
-1002
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4620,7 +4620,7 @@ MARIA
 #init d easy_dial rc
 ###!
 #comencen ""
-M ARIA 
+M MARIA 
 ##M MARIA 
 #comencen "Z"
 
@@ -4785,16 +4785,16 @@ M
 MARIA
 ##MARIA
 #seguent M
-MARIA
+
 ##
 #num_telf
-1001
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #seguent A
-
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+Error::easy_dial:31:Prefix en curs indefinit.
 ##Error::easy_dial:31:Prefix en curs indefinit.
 ###!
 ###!--------------------------------------------------
@@ -4976,13 +4976,13 @@ M
 #init d easy_dial rc
 ###!
 #comencen ""
-M 
+M MARIA 
 ##M MARIA 
 #comencen "Z"
 
 ##
 #comencen "M"
-M 
+M MARIA 
 ##M MARIA 
 #comencen "MZ"
 
@@ -5060,17 +5060,17 @@ Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 K
 ##K
 #seguent 2
-
+K2
 ##K2
 #num_telf
-Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
+1002
 ##1002
 ###!          si afegim ENDPREF ens treu el telefon K2
 #seguent ""
-Error::easy_dial:31:Prefix en curs indefinit.
+
 ##
 #num_telf
-Error::easy_dial:31:Prefix en curs indefinit.
+Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 ##Error::easy_dial:32:No hi ha telefons amb el prefix en curs.
 #d destroy
 ###!
@@ -6481,7 +6481,7 @@ JOSEP
 #init d easy_dial rc
 ###!
 #comencen ""
-JOSEP MAR MAIA MATA IQUEL 
+JOSEP MAR MARIA MARTA MIQUEL 
 ##JOSEP MAR MARIA MARTA MIQUEL 
 #comencen "Z"
 
@@ -6511,7 +6511,7 @@ JOSEP
 
 ##
 #comencen "M"
-MAR MAIA MATA MIQUEL 
+MAR MARIA MARTA MIQUEL 
 ##MAR MARIA MARTA MIQUEL 
 #comencen "MZ"
 
@@ -6535,7 +6535,7 @@ MIQUEL
 
 ##
 #comencen "MA"
-MAR MAIA MATA 
+MAR MARIA MARTA 
 ##MAR MARIA MARTA 
 #comencen "MAZ"
 
