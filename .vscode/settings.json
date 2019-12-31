@@ -3,6 +3,7 @@
         "*.rep": "cpp",
         "util": "cpp",
         "error": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
