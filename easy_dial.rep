@@ -3,6 +3,7 @@ struct node_tst{
   node_tst* _central;
   node_tst* _dret;
 	node_tst* _pare;
+  nat _nivell;
   char _lletra;         //guarda la lletra que tracta
   nat _tlf;
   string maxFr;

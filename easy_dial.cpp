@@ -9,7 +9,6 @@ void easy_dial::insereix(const phone& P, bool &arrel){
   string nom = P.nom();
   nat tlf = P.numero();
   _arrel = rinsereix(_arrel, i, s, nom, tlf, arrel, ant, _arrel);
-  //cout << "ARREL_AF:" << _arrel->antFr<<endl;
 }
 
 easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res) throw(error){
@@ -23,12 +22,11 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
         m->antFr = nom;
         m->_tlf = telef;
         m->_pare = NULL;
+        m->_nivell = 0;
         arrel = false;
         i++;
+        //cout<<"el p_nivell de "<<m->_lletra<<" es: "<<m->_nivell<<endl;
         m->_central = rinsereix(m->_central, i, s, ant_ant, telef, arrel, ant_ant, m);
-        /*cout<<"r_inser_arrel_nom:"<<nom<<endl;
-				cout<<"r_inser_arrel_mF:"<<n->maxFr<< "."<<endl;
-				cout<<"r_inser_arrel_aF:"<<n->antFr<< "."<<endl;*/
       }
       else{
         if (i < s.length()) {
@@ -37,14 +35,11 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
           m->_tlf = telef;
           ant_ant = m->maxFr;
 					m->_pare = res;
+					m->_nivell = i+1;
           nom = "";
           i++;
-          //cout<<"el pare de "<<m->_lletra<<" de maxFr: "<<m->maxFr<<" es: ";
-					//if (res!=NULL) cout<<res->_lletra<<" ."<<endl;
+					//cout<<"el p_nivell de "<<m->_lletra<<" es: "<<m->_nivell<<endl;
           m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m);
-          /*cout<<"r_inser_nom:"<<nom<<endl;
-					cout<<"r_inser_mF:"<<n->maxFr<< "."<<endl;
-					cout<<"r_inser_aF:"<<n->antFr<< "."<<endl;*/
         }
       }
     }
@@ -268,7 +263,7 @@ string easy_dial::seguent(char c) throw(error){
         while (aux != NULL and not trobat){
         if (aux->_lletra == c) trobat = true;
         else if (aux->_lletra > c) aux = aux->_esq;
-        else if (aux->_lletra < c) aux = aux->_dret;
+				else aux = aux->_dret;
       }
     }
     else {
