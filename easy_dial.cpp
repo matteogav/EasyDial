@@ -19,9 +19,9 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
 // Cost = O()
   if(n==NULL){
     node_tst* m = new node_tst;
-    m->_esq = m->_dret = m->_central = NULL;
-    m->_lletra = s[i];
     try {
+    	m->_esq = m->_dret = m->_central = NULL;
+    	m->_lletra = s[i];
       if(arrel){
         m->maxFr = ant_ant;
         m->antFr = nom;
@@ -48,7 +48,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
         }
       }
     }
-    catch (error) {
+    catch(error){
       delete m;
       throw;
     }
@@ -122,17 +122,24 @@ void easy_dial::esborra_tst(node_tst* n) throw(){
 
 easy_dial::node_tst* easy_dial::copia_tst(node_tst* n) throw(error){
 // Cost = O(#n_nodes_tst) ???
+	node_tst* aux;
   if(n != NULL){
-    node_tst* aux = new node_tst;
-    aux->_lletra = n->_lletra;
-    aux->_tlf = n->_tlf;
-    aux->maxFr = n->maxFr;
-    aux->antFr = n->antFr;
-    aux->_esq = copia_tst(n->_esq);
-    aux->_central = copia_tst(n->_central);
-    aux->_dret = copia_tst(n->_dret);
+    aux = new node_tst;
+		try{
+		  aux->_lletra = n->_lletra;
+		  aux->_tlf = n->_tlf;
+		  aux->maxFr = n->maxFr;
+		  aux->antFr = n->antFr;
+		  aux->_esq = copia_tst(n->_esq);
+		  aux->_central = copia_tst(n->_central);
+		  aux->_dret = copia_tst(n->_dret);
+    }
+		catch(error){
+			delete aux;
+			throw;
+		}
   }
-  return n;
+  return aux;
 }
 
 void easy_dial::partir(vector<phone> &v, vector<phone> &v2, int m) throw(){
