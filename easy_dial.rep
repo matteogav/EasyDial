@@ -4,15 +4,15 @@ struct node_tst{
   node_tst* _dret;
 	node_tst* _pare;
   nat nivell;
-  char _lletra;         //guarda la lletra que tracta
+  char _lletra;           //guarda la lletra que tracta
   nat _tlf;
   string maxFr;
   string antFr;
 };
 
-nat total_freq;     //denominador
+nat total_freq;           //denominador
 nat numerador;
-nat num_puls;       //numerador
+nat num_puls;             //numerador
 node_tst* _arrel;
 string _nom_arrel;
 nat _tlf_arrel;

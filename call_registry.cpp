@@ -2,15 +2,13 @@
 #include <vector>
 
 call_registry::node_hash::node_hash(const phone &p, node_hash* seg){
+// Cost = O(1)
 	_phone = p;
 	_seg = seg;
 }
 
 nat call_registry::hash(const nat &x) const{
-	/*long y = (x * x * 31415926)%_mida;
-
-	return y;*/
-
+// Cost = O(#num_digits de x)
 	nat y = x;
 	nat n = 0;
 	int i = 1;
@@ -23,6 +21,7 @@ nat call_registry::hash(const nat &x) const{
 }
 
 nat call_registry::hash_c(string nom) const{
+// Cost = O(nom.length())
 	nat n = 0;
 	for (nat i = 0; i < nom.length(); ++i) n = n + nom[i]*i;
 	n = n%_mida;
@@ -30,7 +29,7 @@ nat call_registry::hash_c(string nom) const{
 }
 
 void call_registry::rehash(){
-	//cout<<"------------------------------REHASH--------------------------"<<endl;
+// Cost = O()
 	nat mida = _mida;
 	_mida *= 2;
 	node_hash** aux = _taula;
@@ -49,7 +48,7 @@ void call_registry::rehash(){
 }
 
 call_registry::node_hash* call_registry::consulta(nat num, nat &i) const{
-
+// Cost = O()
 	i = hash(num);
 	node_hash *res = _taula[i];
 	bool trobat = false;
@@ -66,6 +65,7 @@ call_registry::node_hash* call_registry::consulta(nat num, nat &i) const{
 }
 
 void call_registry::esborrar(node_hash* n) const{
+// Cost = O()
 	if (n!=NULL) {
     	esborrar(n->_seg);
     	delete n;
@@ -73,7 +73,7 @@ void call_registry::esborrar(node_hash* n) const{
 }
 
 call_registry::call_registry() throw(error){
-
+// Cost = O()
 	_mida = 16;
 	_n_elements = 0;
 	_taula = new node_hash*[_mida];
@@ -82,6 +82,7 @@ call_registry::call_registry() throw(error){
 
 /* Constructor per còpia, operador d'assignació i destructor. */
 call_registry::call_registry(const call_registry& R) throw(error){
+// Cost = O()
 	_mida = R._mida;
 	_n_elements = R._n_elements;
 
@@ -104,6 +105,7 @@ call_registry::call_registry(const call_registry& R) throw(error){
 }
 
 call_registry& call_registry::operator=(const call_registry& R) throw(error){
+// Cost = O()
 	_mida = R._mida;
 	_n_elements = R._n_elements;
 
@@ -129,11 +131,13 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 }
 
 call_registry::~call_registry() throw(){
+// Cost = O(_mida) ??
 	for (nat i = 0; i < _mida; ++i) esborrar(_taula[i]);
 	delete[] _taula;
 }
 
 void call_registry::registra_trucada(nat num) throw(error){
+// Cost = O()
 	if (es_buit()){
 		nat z = hash(num);
 		phone nou_p(num, "", 1);
@@ -165,6 +169,7 @@ void call_registry::registra_trucada(nat num) throw(error){
 }
 
 void call_registry::assigna_nom(nat num, const string& name) throw(error){
+// Cost = O()
 	if (es_buit()){
 		nat z = hash(num);
 		phone nou_p(num, name, 0);
@@ -199,6 +204,7 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 }
 
 void call_registry::elimina(nat num) throw(error){
+// Cost = O()
 	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat i = hash(num);
 	node_hash* aux = _taula[i];
@@ -226,6 +232,7 @@ void call_registry::elimina(nat num) throw(error){
 }
 
 bool call_registry::conte(nat num) const throw(){
+// Cost = O(1)
 	if (es_buit()) return false;
 	bool res = false;
 
@@ -240,6 +247,7 @@ bool call_registry::conte(nat num) const throw(){
 }
 
 string call_registry::nom(nat num) const throw(error){
+// Cost = O(1)
 	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat k;
 	node_hash* aux = consulta(num, k);
@@ -255,6 +263,7 @@ string call_registry::nom(nat num) const throw(error){
 }
 
 nat call_registry::num_trucades(nat num) const throw(error){
+// Cost = O(1)
 	if (es_buit()) throw error(ErrNumeroInexistent);
 	nat k;
 	node_hash* aux = consulta(num, k);
@@ -270,14 +279,17 @@ nat call_registry::num_trucades(nat num) const throw(error){
 }
 
 bool call_registry::es_buit() const throw(){
+// Cost = O(1)
 	return _n_elements == 0;
 }
 
 nat call_registry::num_entrades() const throw(){
+// Cost = O(1)
 	return _n_elements;
 }
 
 void call_registry::dump(vector<phone>& V) const throw(error){
+// Cost = O()
 	//nomes aqui es llança throw error(ErrNomRepetit)
 	//volca  elements a una nova taula de hash amb funcio hash dels noms
 	if(not es_buit()){
@@ -294,7 +306,6 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				}
 			}
 		}
-
 		//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
 		//fent lo de sinonims
 		for (nat i = 0; i < _mida; ++i){
@@ -323,19 +334,3 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 		}
 	}
 }
-
-
-/*		//imprimir taula
-	for (unsigned i = 0; i<_mida;i++){
-		cout<<i<<". ";
-		node_hash *x = _taula[i];
-		if (x != NULL){
-			while (x != NULL){							//per cada node de la sequencia de la posicio i
-				cout<<"["<<(x->_phone).numero()<<", "<<(x->_phone).nom()<<", "<<(x->_phone).frequencia()<<"] --> ";
-				x = x->_seg;
-			}
-		}
-		cout<<endl;
-	}
-
-*/
