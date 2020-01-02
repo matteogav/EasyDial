@@ -10,6 +10,6 @@ nat _n_elements;
 
 static nat hash(const nat &num, nat M) throw();		          //funcio de hash
 static nat hash_c(string nom, nat M) throw();
-void rehash() throw();
+static void rehash(nat &M, node_hash** &taula) throw();
 static node_hash* consulta(nat num, nat num_hash, node_hash** taula) throw();
 static void esborrar(node_hash* n) throw();

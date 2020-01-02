@@ -12,9 +12,10 @@ nat call_registry::hash(const nat &x, nat M) throw(){
 	nat y = x;
 	nat n = 0;
 	int i = 1;
-	for(; y > 9; ++i){
+	while (y > 9){
 		n += y%10 * i;
 		y = y/10;
+		++i;
 	}
 	n += y * i;
 	return n%M;
@@ -28,17 +29,17 @@ nat call_registry::hash_c(string nom, nat M) throw(){
 	return n;
 }
 
-void call_registry::rehash() throw(){
+void call_registry::rehash(nat &M, node_hash** &taula) throw(){
 // Cost = O(n) --> mida taula + cada node de la sequencia de la posicio i
-	nat mida = _mida;
-	_mida *= 2;
-	node_hash** aux = _taula;
-	node_hash** _taula_ = new node_hash*[_mida];
+	nat mida = M;
+	M *= 2;
+	node_hash** aux = taula;
+	node_hash** _taula_ = new node_hash*[M];
 	try{
-		for(nat i=0; i < _mida; ++i) _taula_[i] = NULL;
+		for(nat i=0; i < M; ++i) _taula_[i] = NULL;
 	}
 	catch(error){
-		for(nat i=0; i < _mida; ++i) esborrar(_taula_[i]);
+		for(nat i=0; i < M; ++i) esborrar(_taula_[i]);
     	delete[] _taula_;
     	throw;
     }
@@ -46,7 +47,17 @@ void call_registry::rehash() throw(){
 	for (nat i = 0; i < mida; ++i){						// per cada posicio i de la taula abans de rehash
 		node_hash* x = aux[i];
 		while (x != NULL){								//per cada node de la sequencia de la posicio i
-			nat j = hash(x->_phone.numero(), _mida);
+			//calcula hash(num)
+			nat y = x->_phone.numero();
+			nat n = 0;
+			int i = 1;
+			while (y > 9){
+				n += y%10 * i;
+				y = y/10;
+				++i;
+			}
+			n += y * i;
+			nat j = n%M;
 			try{
 				_taula_[j] = new node_hash(x->_phone, _taula_[j]);				//creo nou node i el poso a davant
 			}
@@ -57,7 +68,7 @@ void call_registry::rehash() throw(){
 			x = x->_seg;
 		}
 	}
-	_taula = _taula_;
+	taula = _taula_;
 	_taula_ = NULL;			// eliminar node _taula_
 	delete[] _taula_;
 }
@@ -216,7 +227,7 @@ void call_registry::registra_trucada(nat num) throw(error){
 	}
 	else {
 		float f_carrega = float(_n_elements)/float(_mida);
-		if(f_carrega > 0.75) rehash();				//cost O(n*l)
+		if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
 
 		nat k = hash(num, _mida);
 		node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
@@ -266,7 +277,7 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 	}
 	else {
 		float f_carrega = float(_n_elements)/float(_mida);
-		if(f_carrega > 0.75) rehash();				//cost O(n*l)
+		if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
 
 		nat k = hash(num, _mida);
 		node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
