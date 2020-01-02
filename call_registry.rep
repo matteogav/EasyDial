@@ -1,7 +1,7 @@
 struct node_hash {
 	phone _phone;
 	node_hash* _seg;
-	node_hash(const phone &p, node_hash* seg = NULL);
+	node_hash(const phone &p, node_hash* seg = NULL) throw(error);
 };
 
 node_hash** _taula;
