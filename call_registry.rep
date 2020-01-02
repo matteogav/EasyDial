@@ -8,8 +8,8 @@ node_hash** _taula;
 nat _mida;
 nat _n_elements;
 
-nat hash(const nat &num) const;		          //funcio de hash
-nat hash_c(string nom) const;
-void rehash();
-node_hash* consulta(nat num, nat &k) const;
-void esborrar(node_hash* n) const;
+nat hash(const nat &num) const throw();		          //funcio de hash
+nat hash_c(string nom) const throw();
+void rehash() throw();
+node_hash* consulta(nat num, nat &k) const throw();
+void esborrar(node_hash* n) const throw();
