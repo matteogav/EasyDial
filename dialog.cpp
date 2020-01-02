@@ -6,7 +6,7 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
   nat num_tlf = 0;       // o num_tlf = easy.num_telf();
 
   easy.inici();
-  while(i < input.lenght()-1 and not fi){
+  while(i < input.length()-1 and not fi){
     if(input[i] == phone::ENDCHAR){    //??
       num_tlf = easy.num_telf();
       fi = true;
@@ -14,13 +14,13 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
     }
     else if(input[i] == phone::DELETECHAR){
       easy.anterior();
-      num_tlf = easy.num.telf();
+      num_tlf = easy.num_telf();
       i++;
     }
     else{                               //Ni la variable 'i' ni 'num_tlf' es poden factoritzar i treure fora,
       num_tlf = easy.num_telf();        //segueixen un ordre de la manera que se li dona el valor segons l'opcio
       i++;                              //encara que aixo un 'prototip' del que crec que podria ser la solucio
-      easy.seguent(s[i]);
+      easy.seguent(input[i]);
     }
   }
 }
