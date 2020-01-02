@@ -1,7 +1,7 @@
 #include "easy_dial.hpp"
 #include <sstream>
 
-void easy_dial::insereix(const phone& P, bool &arrel){
+void easy_dial::insereix(const phone& P, bool &arrel) throw(){
 // Cost = O()
   string s = P.nom();
   s += phone::ENDPREF;
@@ -79,7 +79,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
   }
 }
 
-void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) const throw(){
+void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) throw(){
 // Cost = O()
   if (n != NULL){
     if (i < pref.size()) {  // busco el prefix primer
