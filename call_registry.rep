@@ -12,4 +12,4 @@ nat hash(const nat &num) const throw();		          //funcio de hash
 nat hash_c(string nom) const throw();
 void rehash() throw();
 node_hash* consulta(nat num, nat &k) const throw();
-void esborrar(node_hash* n) const throw();
+static void esborrar(node_hash* n) throw();

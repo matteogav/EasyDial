@@ -79,7 +79,7 @@ call_registry::node_hash* call_registry::consulta(nat num, nat &i) const throw()
 	return res;
 }
 
-void call_registry::esborrar(node_hash* n) const throw(){
+void call_registry::esborrar(node_hash* n) throw(){
 // Cost = O(n) --> n = elements de la sequencia
 	if (n!=NULL) {
     	esborrar(n->_seg);
