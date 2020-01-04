@@ -44,9 +44,10 @@ void call_registry::rehash(nat &M, node_hash** &taula) throw(){
     	throw;
     }
 
-	for (nat i = 0; i < mida; ++i){						// per cada posicio i de la taula abans de rehash
+	// Redistribuir els elements de la taula vella(_mida) a la taula nova(_mida*2)
+	for (nat i = 0; i < mida; ++i){			// per cada posicio i de la taula abans de rehash
 		node_hash* x = aux[i];
-		while (x != NULL){								//per cada node de la sequencia de la posicio i
+		while (x != NULL){					//per cada node de la sequencia de la posicio i
 			//calcula hash(num)
 			nat y = x->_phone.numero();
 			nat n = 0;
@@ -59,7 +60,8 @@ void call_registry::rehash(nat &M, node_hash** &taula) throw(){
 			n += y * i;
 			nat j = n%M;
 			try{
-				_taula_[j] = new node_hash(x->_phone, _taula_[j]);				//creo nou node i el poso a davant
+				//creo nou node i el poso a davant
+				_taula_[j] = new node_hash(x->_phone, _taula_[j]);
 			}
 			catch(error){
 				delete _taula_[j];
@@ -68,9 +70,8 @@ void call_registry::rehash(nat &M, node_hash** &taula) throw(){
 			x = x->_seg;
 		}
 	}
+	delete[] taula;
 	taula = _taula_;
-	_taula_ = NULL;			// eliminar node _taula_
-	delete[] _taula_;
 }
 
 call_registry::node_hash* call_registry::consulta(nat num, nat num_hash, node_hash** taula) throw(){
@@ -78,10 +79,9 @@ call_registry::node_hash* call_registry::consulta(nat num, nat num_hash, node_ha
 	node_hash* res = taula[num_hash];
 	bool trobat = false;
 
-	//ho miro fins al últim abans d'acabar, per guardar anterior, si hi es retorna un element del mig
-	//si no hi es en el bucle poder esta en el ultim i es mira en la seguent funcio
+	// Recorrer la llista d'elements fins a trobar el que busquem, sinó el trobem el node serà NULL
 	if (res != NULL){
-		while (not trobat and res->_seg != NULL){
+		while (not trobat and res != NULL){
 			if (res->_phone.numero() == num) trobat = true;
 			else res = res->_seg;
 		}
@@ -101,6 +101,7 @@ call_registry::call_registry() throw(error){
 // Cost = O(_mida)
 	_mida = 16;
 	_n_elements = 0;
+	// Crear tota la taula a NULL
 	_taula = new node_hash*[_mida];
 	try{
 		for(nat i=0; i < _mida ; ++i) _taula[i] = NULL;
@@ -129,6 +130,7 @@ call_registry::call_registry(const call_registry& R) throw(error){
     	throw;
     }
 
+	// Copiar totes les llistes de cada element de la taula
 	for(nat i=0; i < _mida; ++i){
 		node_hash* aux = R._taula[i];
 		node_hash *ant = NULL;
@@ -173,6 +175,7 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
     	throw;
     }
 
+	// Copiar totes les llistes de cada element de la taula
 	if(this != &R){
 		for(nat i=0; i < _mida; ++i){
 			node_hash* aux = R._taula[i];
@@ -213,124 +216,75 @@ call_registry::~call_registry() throw(){
 
 void call_registry::registra_trucada(nat num) throw(error){
 // Cost = O(hash + elements sequencia) perque rehash es fa en molt poques ocacions
-	if (es_buit()){
-		nat z = hash(num, _mida);					//cost O(num.size())
+	float f_carrega = float(_n_elements)/float(_mida);
+	if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
+
+	// Busquem posició de la taula i mirem si hi és	
+	nat k = hash(num, _mida);
+	node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
+
+	// Si hi és vol dir que aux != NULL, per tant, sumo en un la frequencia
+	if (aux != NULL) ++aux->_phone;
+	// Si aux == NULL vol dir que no hi és. Creo un nou node amb freq 1 i sense nom
+	else {
 		phone nou_p(num, "", 1);
 		try{
-			_taula[z] = new node_hash(nou_p, _taula[z]);
+			_taula[k] = new node_hash(nou_p, _taula[k]);
 		}
 		catch(error){
-			delete _taula[z];
+			delete _taula[k];
 			throw;
 		}
 		++_n_elements;
-	}
-	else {
-		float f_carrega = float(_n_elements)/float(_mida);
-		if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
-
-		nat k = hash(num, _mida);
-		node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
-
-		if (aux != NULL){							//O(1)
-			//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
-			if (aux->_phone.numero() == num) ++aux->_phone;			//sumo en un la frequencia
-			else { 													//creo un nou node amb freq 1 i sense num
-				phone nou_p(num, "", 1);
-				try{
-					_taula[k] = new node_hash(nou_p, _taula[k]);
-				}
-				catch(error){
-					delete _taula[k];
-					throw;
-				}
-				++_n_elements;
-			}
-		}
-		else { 														//creo un nou node amb freq 1 i sense num
-			phone nou_p(num, "", 1);
-			try{
-				_taula[k] = new node_hash(nou_p, _taula[k]);
-			}
-			catch(error){
-				delete _taula[k];
-				throw;
-			}
-			++_n_elements;
-		}
 	}
 }
 
 void call_registry::assigna_nom(nat num, const string& name) throw(error){
 // Cost = O(hash + elements sequencia) perque rehash es fa en molt poques ocacions
-	if (es_buit()){
-		nat z = hash(num, _mida);					//cost O(num.size())
+	float f_carrega = float(_n_elements)/float(_mida);
+	if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
+
+	// Busquem posició de la taula i mirem si hi és
+	nat k = hash(num, _mida);
+	node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
+
+	// Si aux != NULL vol dir que l'hem trobat i per tant, canviem el nom.
+	if (aux != NULL){							//O(1)
+		phone modificat(num, name, aux->_phone.frequencia());
+		(aux->_phone) = modificat;
+	}
+	// Si aux == NULL vol dir que no l'hem robta i per tant, afegim un nou telefon amb freq = 0.
+	else {
 		phone nou_p(num, name, 0);
 		try{
-			_taula[z] = new node_hash(nou_p, _taula[z]);
+			_taula[k] = new node_hash(nou_p, _taula[k]);
 		}
 		catch(error){
-			delete _taula[z];
+			delete _taula[k];
 			throw;
 		}
 		++_n_elements;
-	}
-	else {
-		float f_carrega = float(_n_elements)/float(_mida);
-		if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
-
-		nat k = hash(num, _mida);
-		node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
-
-		if (aux != NULL){							//O(1)
-			//si no le trobat de moment estic al ultim node de la llista, per tant, comprovo si, és igual o no.
-			if (aux->_phone.numero() == num){
-				phone modificat(num, name, aux->_phone.frequencia());
-				(aux->_phone) = modificat;
-			}
-			else { 													//creo un nou node amb freq 0
-				phone nou_p(num, name, 0);
-				try{
-					_taula[k] = new node_hash(nou_p, _taula[k]);
-				}
-				catch(error){
-					delete _taula[k];
-					throw;
-				}
-				++_n_elements;
-			}
-		}
-		else { 													//creo un nou node amb freq 0
-			phone nou_p(num, name, 0);
-			try{
-				_taula[k] = new node_hash(nou_p, _taula[k]);
-			}
-			catch(error){
-				delete _taula[k];
-				throw;
-			}
-			++_n_elements;
-		}
 	}
 }
 
 void call_registry::elimina(nat num) throw(error){
 // Cost = O(hash + elements sequencia)
+	// Si està buida no existirà cap telèfon.
 	if (es_buit()) throw error(ErrNumeroInexistent);	//cost O(1)
 	nat i = hash(num, _mida);									//cost O(hash + elements sequencia)
 	node_hash* aux = _taula[i];
 	node_hash* ant = NULL;
 	bool trobat = false;
 
+	// Mirem en llista de la posició de la taula i que dona hash(), si hi és
 	while(aux != NULL and not trobat){					//cost O(elements sequencia)
+		// Si hi és marquem trobat = true i en saltem aquest element i el borrem
 		if(aux->_phone.numero() == num){
 			trobat = true;
-			if(ant == NULL){
-				_taula[i] = aux->_seg;
-			}
-			else{
-				ant->_seg = aux->_seg;
-			}
+			// Si estem al principi el punter de la posició i de la taula apunta a seguent.
+			if(ant == NULL) _taula[i] = aux->_seg;
+			// Sinó un salt normal de anterior a seguent.
+			else ant->_seg = aux->_seg;
 			--_n_elements;
 			delete(aux);
 		}
@@ -350,9 +304,9 @@ bool call_registry::conte(nat num) const throw(){
 	nat i = hash(num, _mida);
 	node_hash* aux = consulta(num, i, _taula);		//cost O(hash + elements sequencia)
 
-	if (aux != NULL){
-		if (aux->_phone.numero() == num) res = true;
-	}
+	// Si aux != NULL vol dir que l'hem trobat
+	if (aux != NULL) res = true;
+	// Sinó ja teniem que res = false
 
 	return res;
 }
@@ -365,10 +319,9 @@ string call_registry::nom(nat num) const throw(error){
 
 	string res;
 
-	if (aux != NULL){
-		if (aux->_phone.numero() == num) res = aux->_phone.nom();
-		else throw error(ErrNumeroInexistent);
-	}
+	// Si aux != NULL vol dir que l'hem trobat
+	if (aux != NULL) res = aux->_phone.nom();
+	// Sinó, llancem error
 	else throw error(ErrNumeroInexistent);
 
 	return res;
@@ -381,10 +334,9 @@ nat call_registry::num_trucades(nat num) const throw(error){
 	node_hash* aux = consulta(num, i, _taula);		//cost O(hash + elements sequencia)
 	nat res;
 
-	if (aux != NULL){
-		if (aux->_phone.numero() == num) res = aux->_phone.frequencia();
-		else throw error(ErrNumeroInexistent);
-	}
+	// Si aux != NULL vol dir que l'hem trobat
+	if (aux != NULL) res = aux->_phone.frequencia();
+	// Sinó treiem error
 	else throw error(ErrNumeroInexistent);
 
 	return res;
@@ -402,8 +354,7 @@ nat call_registry::num_entrades() const throw(){
 
 void call_registry::dump(vector<phone>& V) const throw(error){
 // Cost = O()
-	//nomes aqui es llança throw error(ErrNomRepetit)
-	//volca  elements a una nova taula de hash amb funcio hash dels noms
+	//volca elements de la hash() normal, si no és buida, a una nova taula de hash amb funcio hash que ordena per noms
 	if(not es_buit()){
 		node_hash** taula_aux = new node_hash*[_mida];
 		try{
@@ -431,21 +382,20 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				}
 			}
 		}
-		//afegir nova taula de hash al vector i comprovar si hi ha noms iguals
-		//fent lo de sinonims
+		//afegir la nova taula de hash ordenada per noms al vector i comprovar si hi ha noms iguals
 		for (nat i = 0; i < _mida; ++i){							//cost O(_mida * (nº elements de la sequencia)²)
 			if (taula_aux[i] != NULL and taula_aux[i]->_seg != NULL){
 				node_hash* aux = taula_aux[i];
 
-				//afegir a vector si no es igual en cap sinonim
+				//afegir a vector si no es igual en cap "sinonim"
 				while (aux != NULL){								//cost O(nº elements de la sequencia)
 					node_hash *x = aux->_seg;
 					string usr = aux->_phone.nom();
 
 					bool trobat = false;
-					//comprova si els sinonims que queden si hi ha algun igual de nom
+					//comprova si els "sinonims" que queden si hi ha algun igual de nom
 					while (x != NULL and !trobat){					//cost O(nº elements de la sequencia)
-						if(usr != "") if (usr == x->_phone.nom()) trobat = true;
+						if(usr != "" and usr == x->_phone.nom()) trobat = true;
 						x = x->_seg;
 					}
 					if (trobat) throw error(ErrNomRepetit);

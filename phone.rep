@@ -3,8 +3,8 @@ string contacte;
 nat freq;
 
 /* 
-En aquesta classe no es ha fet falta fer serviri memòria dinàmica,
+En aquesta classe no ens ha fet falta fer servir memòria dinàmica,
 perquè aquesta classe només guarda un telèfon. Per això, hem escollit
-els 3 atributs que té un telèfon, nom, número de telèfon i la freqüència
-de trucades.
+els 3 atributs que té un telèfon {nom, número de telèfon i la freqüència
+de trucades}.
 */

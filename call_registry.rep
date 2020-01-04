@@ -13,3 +13,39 @@ static nat hash_c(string nom, nat M) throw();
 static void rehash(nat &M, node_hash** &taula) throw();
 static node_hash* consulta(nat num, nat num_hash, node_hash** taula) throw();
 static void esborrar(node_hash* n) throw();
+
+
+/*
+En aquesta classe si que hem necessitat fer-ho amb memòria dinàmica. Concretament hem utilitzat
+una estructura de Taula de dispersió amb sinònims encadenats indirectes. Ja que segons l'enunciat 
+d'aquesta classe el cost pitjor o mitjà de totes les operacions, excepte els constructors per còpia
+i la funció dump, ha de ser logarítmic o inferior. Al dir cost mitjà haviem plantejat la possibilitat
+de fer una estructura BST, però al tenir millors costs amb les taules de dispersió vam obtar per
+aquesta opció.   
+Vam acabar escollint taules de dispersió amb sinònims encadenats indirectes perquè en les taules de
+dispersió de sondeig lineal, la nostre primera opció, hi havia costos que no ens eren eficients.
+
+- funció hash(const nat &num, nat M):
+Aquesta funció el que fa és:
+
+- funció hash_c(string nom, nat M):
+Aquesta funció el que fa és: Calcula per el nom que se li dóna per paràmetre un número de la taula de 
+dispersió, fent així que si hi ha dos noms iguals els posa en el mateix lloc i així poder executar bé
+la funció de dump.
+
+- funció rehash(nat &M, node_hash** &taula):
+Aquesta funció el que fa és: Duplicar la mida de la taula actual i reordenar els elements de la taula
+de dispresió vella a la nova.
+
+- funció consulta(nat num, nat num_hash, node_hash** taula):
+Aquesta funció el que fa és: Consulta un element de la llista de la posició num_hash donada i retorna
+el node en que l'ha trobat, en cas de que no el trobi, el node que retorna és NULL.
+
+- funció esborrar(node_hash* n):
+Aquesta funció el que fa és: Primer crea una nova taula de dispersió ordenada, en comptes de pel número 
+telèfon, la ordena per el nom de contacte, fent que si hi ha dos noms iguals els posa en la mateixa posició
+de la taula. Un cop tenim la taula de dispersió ordenada per noms, mirem tota la taula i afegim els noms que
+no siguin buits ni repetits en el vector V. De fet si ens trobem en el cas de que siguin buits, no els afegim i
+seguim, però si hi ha un nom repetit, envia un error de nom repetit.
+
+*/
