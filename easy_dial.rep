@@ -10,11 +10,9 @@ struct node_tst{
   string antFr;
 };
 
-nat total_freq;           //denominador
-nat numerador;
-nat num_puls;             //numerador
 node_tst* _arrel;
-string _nom_arrel;
+nat total_freq;           //denominador
+nat numerador;            //numerador            
 nat _tlf_arrel;
 node_tst* _pref_n;
 bool _pref_indef;
