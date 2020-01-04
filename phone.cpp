@@ -5,6 +5,7 @@ phone::phone(nat num, const string& name, nat compt) throw(error){
 // Cost = O(name.size()) ---> O(1)
   bool trobat = false;
   nat i = 0;
+  // comprovar que no tingui cap caràcter no desitjat en el nom. Si és així llançar error, sinó segueix
   while (i < name.size() and !trobat){
     if (name[i] == DELETECHAR or name[i] == ENDCHAR or name[i] == ENDPREF) throw error(ErrNomIncorrecte);
     i++;
@@ -15,6 +16,7 @@ phone::phone(nat num, const string& name, nat compt) throw(error){
 }
 
 /* Tres grans. Constructor per còpia, operador d'assignació i destructor. */
+// Comportament sense utilitzar memòria dinàmica
 phone::phone(const phone& T) throw(error){
 // Cost = O(1)
   telf = T.telf;
@@ -71,6 +73,7 @@ bool phone::operator!=(const phone& T) const throw(){
 bool phone::operator<(const phone& T) const throw(){
 // Cost = O(1)
   bool res;
+  // Comprovar freqüència, si és igual mirar nom.
   if (freq < T.freq) res = true;
   else if (freq == T.freq){
     if (contacte < T.contacte) res = true;
@@ -84,6 +87,7 @@ bool phone::operator<(const phone& T) const throw(){
 bool phone::operator>(const phone& T) const throw(){
 // Cost = O(1)
   bool res;
+  // Comprovar freqüència, si és igual mirar nom.
   if (freq > T.freq) res = true;
   else if (freq == T.freq){
     if (contacte > T.contacte) res = true;
