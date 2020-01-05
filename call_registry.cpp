@@ -70,6 +70,7 @@ void call_registry::rehash(nat &M, node_hash** &taula) throw(){
 			x = x->_seg;
 		}
 	}
+	for (nat i = 0; i < mida; ++i) esborrar(taula[i]);
 	delete[] taula;
 	taula = _taula_;
 }
@@ -110,8 +111,7 @@ call_registry::call_registry() throw(error){
 		for(nat i=0; i < _mida; ++i) esborrar(_taula[i]);
     	delete[] _taula;
     	throw;
-    }
-	
+  }
 }
 
 /* Constructor per còpia, operador d'assignació i destructor. */
@@ -179,7 +179,7 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 	if(this != &R){
 		for(nat i=0; i < _mida; ++i){
 			node_hash* aux = R._taula[i];
-			node_hash *ant = NULL;
+			node_hash* ant = NULL;
 			while(aux != NULL){
 				if(ant == NULL) {
 					try{
@@ -203,6 +203,8 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 				aux = aux->_seg;
 			}
 		}
+		for (nat i = 0; i < _mida; ++i) esborrar(_taula[i]);
+		delete[] _taula;
 		_taula = taula_aux;
 	}
 	return *this;
@@ -362,9 +364,9 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 		}
 		catch(error){
 			for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
-    		delete[] taula_aux;
-    		throw;
-    	}
+    	delete[] taula_aux;
+    	throw;
+    }
 
 		for (nat i = 0; i < _mida; ++i){			//cost O(_mida * mº elements de la sequencia)
 			if (_taula[i] != NULL){
@@ -409,5 +411,7 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				if ((taula_aux[i]->_phone).nom() != "") V.push_back(taula_aux[i]->_phone);
 			}
 		}
+	for (nat i = 0; i < _mida; ++i) esborrar(taula_aux[i]);
+	delete[] taula_aux;
 	}
 }
