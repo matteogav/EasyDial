@@ -4789,7 +4789,7 @@ longitud_mitj
 ##!
 init d easy_dial rc
 ##!
-dialog d "MA|"
+dialog MA|
 #JOSEP MIQUEL MARIA 1001
 ##!
 d destroy
