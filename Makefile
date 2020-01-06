@@ -42,6 +42,9 @@ comprova_call_registry:
 comprova_easy_dial:
 	echo "time ./driver.e < jp_public/jp_public_easy_dial.in >& jp_public/jp_easy_dial.out && diff jp_public/jp_easy_dial.out jp_public/jp_easy_dial.res"
 
+comprova_dialog:
+	echo "time ./driver.e < jp_dialog.in >& jp_dialog.out"
+
 comprova:
 	echo "time ./driver.e < jp_public.in >& jp.out && diff jp.out jp_public.res"
 
