@@ -12,6 +12,7 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
 	}
 	catch(error e){
     num_tlf = 0;
+		fi = true;
     answers.push_back(e.mensaje());
   }	
 	
@@ -20,12 +21,12 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
       if(input[i] == phone::ENDCHAR){
 				nom = easy.seguent(phone::ENDPREF);
         num_tlf = easy.num_telf();
-        fi = true;
+        ++i;
       }
       else if(input[i] == phone::DELETECHAR){
         nom = easy.anterior();
         num_tlf = easy.num_telf();
-        i++;
+        ++i;
       }
       else{                                                               
         nom = easy.seguent(input[i]);
