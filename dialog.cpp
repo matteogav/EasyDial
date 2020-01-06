@@ -4,8 +4,9 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
   nat i = 0;
   bool fi = false;
   nat num_tlf = 0;
-  string nom;
-  easy.inici();
+  string nom = easy.inici();
+	answers.push_back(nom);
+	num_tlf = easy.num_telf();	
 	
   while(i < input.length() and not fi){
     try{
