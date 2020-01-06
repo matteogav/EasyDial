@@ -6,11 +6,13 @@ void dialog::dialog(easy_dial& easy, const string& input, vector<string>& answer
   nat num_tlf = 0;       // o num_tlf = easy.num_telf();
   string nom;
   easy.inici();
+	cout << "PUTO NOM:" << easy.seguent(input[i]) << endl;
+	
   while(i < input.length() and not fi){
     cout << "LLETRA: " << input[i] <<endl;
     try{
       if(input[i] == phone::ENDCHAR){
-				cout << "aqui1" <<endl;
+				cout << "aqui" <<endl;
         num_tlf = easy.num_telf();
         fi = true;
         i++;
