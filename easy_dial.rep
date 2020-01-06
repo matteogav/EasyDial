@@ -12,7 +12,7 @@ struct node_tst{
 
 node_tst* _arrel;
 nat total_freq;           //denominador
-nat numerador;            //numerador            
+nat numerador;            //numerador
 nat _tlf_arrel;
 node_tst* _pref_n;
 bool _pref_indef;
@@ -30,28 +30,28 @@ static void partir(vector<phone> &v, vector<phone> &v2, int m) throw();
 static void fusionar(vector<phone> &v, vector<phone> &v2) throw();
 
 /*
-En aquesta classe si que hem necessitat fer-ho amb memòria dinàmica. Concretament hem utilitzat
-una estructura arbre ternari de cerca, TST. Com que seguent(char), anterior() i num_tlef() necessitaven ser cost constant
-hem escollit la millor estructura en quant a costos per poder fer aquestes 3 funcions. Al tenir-ho ordenat per lletres
-de més petita a més gran el cost de la busqueda de la seguent o anterior lletra només és, en el pitjor cas, de 24 moviments
-esquerra o dreta.
+Aquesta classe l'hem implementat fent ús de la memòria dinàmica. Concretament hem utilitzat una estructura
+d'arbre ternari de cerca, TST. Com que seguent(char), anterior() i num_tlef() necessitaven ser cost constant
+hem escollit la millor estructura quant a costos per poder fer aquestes 3 funcions. En tenir-ho ordenat per
+lletres de més petita a més gran el cost de la cerca de la següent o anterior lletra és, en el pitjor dels casos,
+de 24 moviments esquerra o dreta.
 
 insereix(const phone& P, bool &arr, node_tst* &a, nat &freq, nat &numerad):
-Aquesta funció el que fa és: 
+Aquesta funció el que fa és:
 
 rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num, node_tst* aarreell):
-Aquesta funció el que fa és: 
+Aquesta funció el que fa és:
 
 esborra_tst(node_tst* n):
 Aquesta funció el que fa és:
 
 copia_tst(node_tst* n):
-Aquesta funció el que fa és: 
+Aquesta funció el que fa és:
 
 emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux):
-Aquesta funció el que fa és: Primer buscar per tot el tst el prefix pref, un cop hem trobat el prefix a partir d'allà buscar tots
-els noms que hi puguin haver-hi amb el recorregut en preordre, així es treiem per ordre alfebètic. Quan arriba a fi de nom \0 mira
-si hi ha un fill dret i continuar i/o torna enrere.
+Aquesta funció el que fa és: Primer buscar per tot el TST el prefix pref, un cop hem trobat el prefix a
+partir d'allà buscar tots els noms que hi puguin haver amb el recorregut en preordre, així els obtenim per
+ordre alfabètic. Quan arriba a fi de nom \0 mira si hi ha un fill dret i continuar i/o torna enrere.
 
 ordena(vector<phone> &v, int n):
 Aquesta funció el que fa és: Fa el mètode d'ordenació Mergesort

@@ -20,16 +20,16 @@ void easy_dial::insereix(const phone& P, bool &arrel, node_tst* &a, nat &freq, n
 easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res,const nat &freq, nat &puls_num, node_tst* aarreell) throw(error){
 // Cost = O()
   // Si el node es NULL creem un node nou.
-  if(n==NULL){
+  if(n == NULL){
     node_tst* m = new node_tst;
-    try {
+    try{
     	m->_esq = m->_dret = m->_central = NULL;
     	m->_lletra = s[i];
       // Si aquest node és arrel, no afegim el nom en maxFr sino en antFr.
-      if(arrel){
+      if (arrel){
         m->maxFr = ant_ant;
         m->antFr = nom;
-        nom="";
+        nom = "";
         m->_tlf = telef;
         m->_pare = NULL;
         m->nivell = 0;
@@ -39,7 +39,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
       }
       // Sinó afegim normal, maxFr el nom, antFr el anterior i el _tlf el número de telèfon
       else{
-        if (i < s.length()) {
+        if (i < s.length()){
           m->maxFr = nom;
           m->antFr = ant_ant;
           m->_tlf = telef;
@@ -63,7 +63,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
   // Si n != NULL busquem on tirar la seguent lletra, amb la forma de tst si és més petit que la lletra del node tirem esquerra
   // sinó tierm cap a la dreta.
   else{
-    if (n->_lletra > s[i]) {
+    if (n->_lletra > s[i]){
       n->_esq = rinsereix(n->_esq, i, s, nom, telef, arrel, n->antFr, n, freq, puls_num, aarreell);
     }
     else if (n->_lletra < s[i]){
@@ -79,9 +79,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
         n->maxFr = nom;
         n->_tlf = telef;
         nom = "";
-        if (n->antFr != ""){
-          puls_num = freq * n->nivell;
-        }
+        if (n->antFr != "") puls_num = freq * n->nivell;
       }
       ant_ant = n->maxFr;
       i++;
@@ -96,9 +94,9 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
   // Si el node és NULL no fa res, sinó
   if (n != NULL){
     // Amb i primer de tot busquem el prefix
-    if (i < pref.size()) {  // busco el prefix primer
+    if (i < pref.size()){  // busco el prefix primer
       if (pref[i] < n->_lletra) emplena_v(n->_esq, result, pref, i, aux);
-      else if (pref[i] == n->_lletra) {
+      else if (pref[i] == n->_lletra){
         i++;
         emplena_v(n->_central, result, pref, i, aux);
       }
@@ -113,14 +111,12 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
           aux += n->_lletra;
           emplena_v(n->_central, result, pref, i, aux);
           // Mentres no sigui igual a pref borra la última lletra del prefix aux.
-          if (aux != pref) {
-            aux.erase(aux.size() - 1);
-          }
+          if (aux != pref) aux.erase(aux.size() - 1);
         }
         if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
       }
       // Si és final de nom, afegeix al vector result i continua buscant per node dret.
-      else if (n->_lletra == phone::ENDPREF) {
+      else if (n->_lletra == phone::ENDPREF){
         result.push_back(aux);
         if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
       }
@@ -216,7 +212,7 @@ void easy_dial::fusionar(vector<phone> &v, vector<phone> &v2) throw(){
 void easy_dial::ordena(vector<phone> &v, int n) throw(){
 // Cost = O()
   vector<phone> v2;
-  if(n>1){
+  if (n > 1){
     nat m = n / 2;
     partir(v,v2,m);
     ordena(v,m);
@@ -238,7 +234,6 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
   es_buit = false;
   total_freq = 0.0;
   numerador = 0;
-
   nat freq = 0, numerad = 0;
 
   if(v.size() > 0){
@@ -304,13 +299,13 @@ string easy_dial::seguent(char c) throw(error){
 // Cost = O(1) ---> Cas pitjor (#n_lletres_abecedari)
   // Si prefix és indefinit llança error
   if (_pref_indef) throw error(ErrPrefixIndef);
-  // si introdueix dos cops seguit string buit, tira error pref indef i
-  else if (null_pref_n or es_buit) {
+  // Si introdueix dos cops seguit string buit, tira error pref indef i
+  else if (null_pref_n or es_buit){
     _pref_indef = true;
     throw error(ErrPrefixIndef);
   }
   _prefix += c;
-  string res="";
+  string res = "";
 
   bool trobat = false;
   node_tst* aux = _pref_n;
@@ -321,12 +316,12 @@ string easy_dial::seguent(char c) throw(error){
     while (aux != NULL and not trobat){
       if (aux->_lletra == c) trobat = true;
       else if (aux->_lletra > c) aux = aux->_esq;
-	   else aux = aux->_dret;
+	    else aux = aux->_dret;
     }
   }
   // Si la lletra del node és \0 mirar el fill dret i continuar mirant.
-  else {
-    if (aux->_dret != NULL) {
+  else{
+    if (aux->_dret != NULL){
       aux = aux->_dret;
       while (aux != NULL and not trobat){
         if (aux->_lletra == c) trobat = true;
@@ -342,11 +337,10 @@ string easy_dial::seguent(char c) throw(error){
     if (res == "") es_buit = true;
   }
   // Sinó el node ha anat a NULL i per tant, treure "" i activar l'atribut null_pref_n i deixar el _pref_n on estava
-  else {
+  else{
     null_pref_n = true;
     res = "";
   }
-
   return res;
 }
 
@@ -355,7 +349,7 @@ string easy_dial::anterior() throw(error){
   // Si el prefix està indefinit llança error
   if (_pref_indef == true) throw error(ErrPrefixIndef);
   // Si el prefix és buit o lel tst buit activa prefix indefinit i llança error no hi ha anterior
-  else if (_prefix.empty() or _arrel == NULL) {
+  else if (_prefix.empty() or _arrel == NULL){
     _pref_indef = true;
     throw error(ErrNoHiHaAnterior);
   }
@@ -373,13 +367,13 @@ string easy_dial::anterior() throw(error){
       res = _pref_n->maxFr;
     }
     // Si havia anat a null no s'havia mogut el _pref_n, per tant, es retorna el maxFr del _pref_n
-    else {
+    else{
       null_pref_n = false;
       res = _pref_n->maxFr;
     }
   }
   // Si el prefix queda a buit treu _arrel->antFr.
-  else {
+  else{
     _pref_n = _arrel;
     null_pref_n = false;
     res = _pref_n->antFr;
@@ -397,7 +391,7 @@ nat easy_dial::num_telf() const throw(error){
   else if (_arrel == NULL) throw error(ErrNoExisteixTelefon);
   // Si el node ha anat a NULL o maxFr es buit llança error de no existeix
   else if (null_pref_n or es_buit) throw error(ErrNoExisteixTelefon);
-  else {
+  else{
     // Si el prefix = "" treu el _tlf_arrel
     if (_prefix == "") return _tlf_arrel;
     // Sinó treu el telefon de on es troba el _pref_n
@@ -407,8 +401,8 @@ nat easy_dial::num_telf() const throw(error){
 
 void easy_dial::comencen(const string& pref, vector<string>& result) const throw(error){
 // Cost = O()
-/* El que hem fet és guardar un string amb el prefix, primer busquem el prefix i un cop la i es
-   igual a la mida del prefix busquem per esq, central i dret totes les paruales que hi han*/
+// El que hem fet és guardar un string amb el prefix, primer busquem el prefix i un cop la i es
+// igual a la mida del prefix busquem per esq, central i dret totes les paruales que hi han.
 
   nat i = 0;
   string aux = pref;
