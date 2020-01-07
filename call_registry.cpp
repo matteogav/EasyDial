@@ -7,7 +7,7 @@ call_registry::node_hash::node_hash(const phone &p, node_hash* seg) throw(error)
 	_seg = seg;
 }
 
-nat call_registry::hash(const nat &x, nat M) throw(){
+nat call_registry::hash(nat x) const throw(){
 // Cost = O(#num_digits de x)
 	nat y = x;
 	nat n = 0;
@@ -18,27 +18,28 @@ nat call_registry::hash(const nat &x, nat M) throw(){
 		++i;
 	}
 	n += y * i;
-	return n%M;
+	return n%_mida;
 }
 
-nat call_registry::hash_c(string nom, nat M) throw(){
+nat call_registry::hash_c(string nom) const throw(){
 // Cost = O(nom.length())
 	nat n = 0;
 	for (nat i = 0; i < nom.length(); ++i) n = n + nom[i]*i;
-	return n%M;
+	n = n%_mida;
+	return n;
 }
 
-void call_registry::rehash(nat &M, node_hash** &taula) throw(){
+void call_registry::rehash() throw(){
 // Cost = O(n) --> mida taula + cada node de la sequencia de la posicio i
-	nat mida = M;
-	M *= 2;
-	node_hash** aux = taula;
-	node_hash** _taula_ = new node_hash*[M];
+	nat mida = _mida;
+	_mida *= 2;
+	node_hash** aux = _taula;
+	node_hash** _taula_ = new node_hash*[_mida];
 	try{
-		for(nat i=0; i < M; ++i) _taula_[i] = NULL;
+		for(nat i=0; i < _mida; ++i) _taula_[i] = NULL;
 	}
 	catch(error){
-		for(nat i=0; i < M; ++i) esborrar(_taula_[i]);
+		for(nat i=0; i < _mida; ++i) esborrar(_taula_[i]);
     	delete[] _taula_;
     	throw;
     }
@@ -47,35 +48,27 @@ void call_registry::rehash(nat &M, node_hash** &taula) throw(){
 	for (nat i = 0; i < mida; ++i){			// per cada posicio i de la taula abans de rehash
 		node_hash* x = aux[i];
 		while (x != NULL){					//per cada node de la sequencia de la posicio i
-			//calcula hash(num)
-			nat y = x->_phone.numero();
-			nat n = 0;
-			int i = 1;
-			while (y > 9){
-				n += y%10 * i;
-				y = y/10;
-				++i;
-			}
-			n += y * i;
-			n = n%M;
+			nat j = hash(x->_phone.numero());
+
 			try{
-				_taula_[n] = new node_hash(x->_phone, _taula_[n]);   //crea nou node i el posa a davant
+				//creo nou node i el poso a davant
+				_taula_[j] = new node_hash(x->_phone, _taula_[j]);
 			}
 			catch(error){
-				delete _taula_[n];
+				delete _taula_[j];
 				throw;
 			}
 			x = x->_seg;
 		}
 	}
-	for (nat i = 0; i < mida; ++i) esborrar(taula[i]);
-	delete[] taula;
-	taula = _taula_;
+	for (nat i = 0; i < mida; ++i) esborrar(_taula[i]);
+	delete[] _taula;
+	_taula = _taula_;
 }
 
-call_registry::node_hash* call_registry::consulta(nat num, nat num_hash, node_hash** taula) throw(){
+call_registry::node_hash* call_registry::consulta(nat num, nat num_hash) const throw(){
 // Cost = O(hash + elements de la sequencia)
-	node_hash* res = taula[num_hash];
+	node_hash* res = _taula[num_hash];
 	bool trobat = false;
 
 	// Recorrer la llista d'elements fins a trobar el que busquem, sinó el trobem el node serà NULL
@@ -90,25 +83,25 @@ call_registry::node_hash* call_registry::consulta(nat num, nat num_hash, node_ha
 
 void call_registry::esborrar(node_hash* n) throw(){
 // Cost = O(n) --> n = elements de la sequencia
-	if(n != NULL){
-    esborrar(n->_seg);
-    delete n;
-  }
+	if (n!=NULL) {
+    	esborrar(n->_seg);
+    	delete n;
+  	}
 }
 
 call_registry::call_registry() throw(error){
 // Cost = O(_mida)
 	_mida = 16;
 	_n_elements = 0;
-	// Inicialitzar tota la taula a NULL
+	// Crear tota la taula a NULL
 	_taula = new node_hash*[_mida];
 	try{
-		for(nat i=0; i < _mida; ++i) _taula[i] = NULL;
+		for(nat i=0; i < _mida ; ++i) _taula[i] = NULL;
 	}
 	catch(error){
 		for(nat i=0; i < _mida; ++i) esborrar(_taula[i]);
-    delete[] _taula;
-    throw;
+    	delete[] _taula;
+    	throw;
   }
 }
 
@@ -120,13 +113,13 @@ call_registry::call_registry(const call_registry& R) throw(error){
 
 	node_hash **taula_aux = new node_hash*[_mida];
 	try{
-		for(nat i=0; i < _mida; ++i) taula_aux[i] = NULL;
+		for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
 	}
 	catch(error){
 		for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
-    delete[] taula_aux;
-    throw;
-  }
+    	delete[] taula_aux;
+    	throw;
+    }
 
 	// Copiar totes les llistes de cada element de la taula
 	for(nat i=0; i < _mida; ++i){
@@ -169,9 +162,9 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 	}
 	catch(error){
 		for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
-    delete[] taula_aux;
-    throw;
-  }
+    	delete[] taula_aux;
+    	throw;
+    }
 
 	// Copiar totes les llistes de cada element de la taula
 	if(this != &R){
@@ -209,7 +202,7 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 }
 
 call_registry::~call_registry() throw(){
-// Cost = O(_mida*n)
+// Cost = O(_mida*n) 
 	for (nat i = 0; i < _mida; ++i) esborrar(_taula[i]);
 	delete[] _taula;
 }
@@ -217,11 +210,11 @@ call_registry::~call_registry() throw(){
 void call_registry::registra_trucada(nat num) throw(error){
 // Cost = O(hash + elements sequencia) perque rehash es fa en molt poques ocacions
 	float f_carrega = float(_n_elements)/float(_mida);
-	if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
+	if(f_carrega > 0.75) rehash();				//cost O(n*l)
 
-	// Busquem posició de la taula i mirem si hi és
-	nat k = hash(num, _mida);
-	node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
+	// Busquem posició de la taula i mirem si hi és	
+	nat k = hash(num);
+	node_hash* aux = consulta(num, k);			//cost O(hash + elements sequencia)
 
 	// Si hi és vol dir que aux != NULL, per tant, sumo en un la frequencia
 	if (aux != NULL) ++aux->_phone;
@@ -242,11 +235,11 @@ void call_registry::registra_trucada(nat num) throw(error){
 void call_registry::assigna_nom(nat num, const string& name) throw(error){
 // Cost = O(hash + elements sequencia) perque rehash es fa en molt poques ocacions
 	float f_carrega = float(_n_elements)/float(_mida);
-	if(f_carrega > 0.75) rehash(_mida, _taula);				//cost O(n*l)
+	if(f_carrega > 0.75) rehash();				//cost O(n*l)
 
 	// Busquem posició de la taula i mirem si hi és
-	nat k = hash(num, _mida);
-	node_hash* aux = consulta(num, k, _taula);			//cost O(hash + elements sequencia)
+	nat k = hash(num);
+	node_hash* aux = consulta(num, k);			//cost O(hash + elements sequencia)
 
 	// Si aux != NULL vol dir que l'hem trobat i per tant, canviem el nom.
 	if (aux != NULL){							//O(1)
@@ -270,8 +263,8 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 void call_registry::elimina(nat num) throw(error){
 // Cost = O(hash + elements sequencia)
 	// Si està buida no existirà cap telèfon.
-	if(es_buit()) throw error(ErrNumeroInexistent);	    //cost O(1)
-	nat i = hash(num, _mida);									         //cost O(hash + elements sequencia)
+	if (es_buit()) throw error(ErrNumeroInexistent);	//cost O(1)
+	nat i = hash(num);									//cost O(hash + elements sequencia)
 	node_hash* aux = _taula[i];
 	node_hash* ant = NULL;
 	bool trobat = false;
@@ -298,13 +291,15 @@ void call_registry::elimina(nat num) throw(error){
 
 bool call_registry::conte(nat num) const throw(){
 // Cost = O(hash + elements sequencia)
-	if(es_buit()) return false;
+	if (es_buit()) return false;
 	bool res = false;
 
-	nat i = hash(num, _mida);
-	node_hash* aux = consulta(num, i, _taula);		//cost O(hash + elements sequencia)
+	nat i = hash(num);
+	node_hash* aux = consulta(num, i);		//cost O(hash + elements sequencia)
 
+	// Si aux != NULL vol dir que l'hem trobat
 	if (aux != NULL) res = true;
+	// Sinó ja teniem que res = false
 
 	return res;
 }
@@ -312,11 +307,14 @@ bool call_registry::conte(nat num) const throw(){
 string call_registry::nom(nat num) const throw(error){
 // Cost = O(hash + elements sequencia)
 	if (es_buit()) throw error(ErrNumeroInexistent);
-	nat i = hash(num, _mida);
-	node_hash* aux = consulta(num, i, _taula); 		//cost O(hash + elements sequencia)
+	nat i = hash(num);
+	node_hash* aux = consulta(num, i); 		//cost O(hash + elements sequencia)
+
 	string res;
 
+	// Si aux != NULL vol dir que l'hem trobat
 	if (aux != NULL) res = aux->_phone.nom();
+	// Sinó, llancem error
 	else throw error(ErrNumeroInexistent);
 
 	return res;
@@ -325,11 +323,13 @@ string call_registry::nom(nat num) const throw(error){
 nat call_registry::num_trucades(nat num) const throw(error){
 // Cost = O(hash + elements sequencia)
 	if (es_buit()) throw error(ErrNumeroInexistent);
-	nat i = hash(num, _mida);
-	node_hash* aux = consulta(num, i, _taula);		//cost O(hash + elements sequencia)
+	nat i = hash(num);
+	node_hash* aux = consulta(num, i);		//cost O(hash + elements sequencia)
 	nat res;
 
+	// Si aux != NULL vol dir que l'hem trobat
 	if (aux != NULL) res = aux->_phone.frequencia();
+	// Sinó treiem error
 	else throw error(ErrNumeroInexistent);
 
 	return res;
@@ -362,8 +362,8 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 		for (nat i = 0; i < _mida; ++i){			//cost O(_mida * mº elements de la sequencia)
 			if (_taula[i] != NULL){
 				node_hash* aux = _taula[i];
-				while (aux != NULL){				     //cost (nº elements de la sequencia)
-					nat j = hash_c(aux->_phone.nom(), _mida);
+				while (aux != NULL){				//cost (nº elements de la sequencia)
+					nat j = hash_c(aux->_phone.nom());
 					try{
 						taula_aux[j] = new node_hash(aux->_phone, taula_aux[j]);
 					}
@@ -381,7 +381,7 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				node_hash* aux = taula_aux[i];
 
 				//afegir a vector si no es igual en cap "sinonim"
-				while (aux != NULL){								      //cost O(nº elements de la sequencia)
+				while (aux != NULL){								//cost O(nº elements de la sequencia)
 					node_hash *x = aux->_seg;
 					string usr = aux->_phone.nom();
 
@@ -392,7 +392,7 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 						x = x->_seg;
 					}
 					if (trobat) throw error(ErrNomRepetit);
-					else{
+					else {
 						if(usr != "") V.push_back(aux->_phone);
 					}
 					aux = aux->_seg;

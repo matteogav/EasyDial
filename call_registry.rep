@@ -8,50 +8,44 @@ node_hash** _taula;
 nat _mida;
 nat _n_elements;
 
-static nat hash(const nat &num, nat M) throw();	
-static nat hash_c(string nom, nat M) throw();
-static void rehash(nat &M, node_hash** &taula) throw();
-static node_hash* consulta(nat num, nat num_hash, node_hash** taula) throw();
+nat hash(nat num) const throw();		          //funcio de hash
+nat hash_c(string nom) const throw();
+void rehash() throw();
+node_hash* consulta(nat num, nat num_hash) const throw();
 static void esborrar(node_hash* n) throw();
 
 
-/* --------------------------------DOCUMENTACIÓ--------------------------------
-
-
-Aquesta classe l'hem implementat fent ús de la memòria dinàmica. Concretament hem utilitzat
-una estructura de Taula de dispersió amb sinònims encadenats indirectes. Ja que segons l'enunciat
-d'aquesta classe el cost pitjor o mitjà exigits de totes les operacions, excepte els constructors per còpia
-i la funció dump, ha de ser logarítmic o inferior. En dir cost mitjà havíem plantejat la possibilitat
-de fer una estructura BST, però al obtenir millors costs amb les taules de dispersió vam optar per
-aquesta opció.
+/*
+En aquesta classe si que hem necessitat fer-ho amb memòria dinàmica. Concretament hem utilitzat
+una estructura de Taula de dispersió amb sinònims encadenats indirectes. Ja que segons l'enunciat 
+d'aquesta classe el cost pitjor o mitjà de totes les operacions, excepte els constructors per còpia
+i la funció dump, ha de ser logarítmic o inferior. Al dir cost mitjà haviem plantejat la possibilitat
+de fer una estructura BST, però al tenir millors costs amb les taules de dispersió vam obtar per
+aquesta opció.   
 Vam acabar escollint taules de dispersió amb sinònims encadenats indirectes perquè en les taules de
-dispersió amb sondeig lineal, hi havia costos que no eren suficientment eficients.
+dispersió de sondeig lineal, la nostre primera opció, hi havia costos que no ens eren eficients.
 
-- funció hash(const nat &num, nat M):
-Aquesta funció el que fa és: Retorna un nombre natural, que calcula a partir d'un natural donat, el
-qual descompon cada número que el compon i el multiplica per la seva posició, finalment a aquest
-número li aplica el mòdul del segon paràmetre que rebem. D'aquesta manera evitem que un nombre compost
-d'una seqüència de números determinada, coincideixi amb un altre numero que conté la mateixa seqüència
-però amb un ordre diferent de la primera.
+- funció hash():
+Aquesta funció el que fa és:
 
-- funció hash_c(string nom, nat M):
-Aquesta funció el que fa és: Calcula pel nom que obté per paràmetre, un número de la taula de
+- funció hash_c():
+Aquesta funció el que fa és: Calcula per el nom que se li dóna per paràmetre un número de la taula de 
 dispersió, fent així que si hi ha dos noms iguals els posa en el mateix lloc i així poder executar bé
 la funció de dump.
 
-- funció rehash(nat &M, node_hash** &taula):
-Aquesta funció el que fa és: Duplica la mida de la taula actual i reordena els elements de la taula
-de dispersió vella a la nova, finalment se li assigna la taula nova a l'actual.
+- funció rehash():
+Aquesta funció el que fa és: Duplicar la mida de la taula actual i reordenar els elements de la taula
+de dispresió vella a la nova.
 
 - funció consulta(nat num, nat num_hash, node_hash** taula):
 Aquesta funció el que fa és: Consulta un element de la llista de la posició num_hash donada i retorna
-el node en què l'ha trobat, en cas que no el trobi, el node que retorna és NULL.
+el node en que l'ha trobat, en cas de que no el trobi, el node que retorna és NULL.
 
 - funció esborrar(node_hash* n):
-Aquesta funció el que fa és: Primer crea una nova taula de dispersió ordenada, en comptes de pel número de
-telèfon, l'ordena segons el nom de contacte, fent que si hi ha dos noms iguals els posa en la mateixa posició
+Aquesta funció el que fa és: Primer crea una nova taula de dispersió ordenada, en comptes de pel número 
+telèfon, la ordena per el nom de contacte, fent que si hi ha dos noms iguals els posa en la mateixa posició
 de la taula. Un cop tenim la taula de dispersió ordenada per noms, mirem tota la taula i afegim els noms que
-no siguin buits ni repetits en el vector V. De fet si ens trobem en el cas que siguin buits, no els afegim i
+no siguin buits ni repetits en el vector V. De fet si ens trobem en el cas de que siguin buits, no els afegim i
 seguim, però si hi ha un nom repetit, envia un error de nom repetit.
 
 */
