@@ -91,7 +91,7 @@ void call_registry::esborrar(node_hash* n) throw(){
 
 call_registry::call_registry() throw(error){
 // Cost = O(_mida)
-	_mida = 16;
+	_mida = 64;
 	_n_elements = 0;
 	// Crear tota la taula a NULL
 	_taula = new node_hash*[_mida];
