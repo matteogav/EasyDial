@@ -20,8 +20,8 @@ bool null_pref_n;         //indicar que el pref_n hauria anat a NULL
 bool es_buit;             //indicar que el seguent ha donat string buida
 string _prefix;
 
-static void insereix(const phone& P, bool &arr, node_tst* &a, nat &freq, nat &numerad) throw();
-static node_tst* rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num, node_tst* aarreell) throw(error);
+void insereix(const phone& P, bool &arr) throw();
+node_tst* rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num) throw(error);
 static void esborra_tst(node_tst* n) throw();
 static node_tst* copia_tst(node_tst* n) throw(error);
 static void emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) throw();
