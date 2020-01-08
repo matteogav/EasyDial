@@ -345,7 +345,7 @@ nat call_registry::num_entrades() const throw(){
 }
 
 void call_registry::dump(vector<phone>& V) const throw(error){
-// Cost = O()
+// Cost = O(_mida * (nº elements de la sequencia)²)
 	//volca elements de la hash() normal, si no és buida, a una nova taula de hash amb funcio hash que ordena per noms
 	if(not es_buit()){
 		node_hash** taula_aux = new node_hash*[_mida];

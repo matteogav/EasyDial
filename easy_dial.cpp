@@ -2,7 +2,7 @@
 #include <sstream>
 
 void easy_dial::insereix(const phone& P, bool &arrel) throw(){
-// Cost = O()
+// Cost = O(s.lenght() * log(#n_lletres_abecedari))
   string s = P.nom();
   s += phone::ENDPREF;
   nat i = 0;
@@ -19,7 +19,7 @@ void easy_dial::insereix(const phone& P, bool &arrel) throw(){
 }
 
 easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res,const nat &freq, nat &puls_num) throw(error){
-// Cost = O()
+// Cost = O(s.lenght() * log(#n_lletres_abecedari))
   // Si el node es NULL creem un node nou.
   if(n == NULL){
     node_tst* m = new node_tst;
@@ -91,7 +91,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
 }
 
 void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pref, nat& i, string &aux) throw(){
-// Cost = O()
+// Cost = O(pref.lenght() * log(#n_lletres_abecedari))
   // Si el node és NULL no fa res, sinó
   if (n != NULL){
     // Amb i primer de tot busquem el prefix
@@ -161,7 +161,7 @@ easy_dial::node_tst* easy_dial::copia_tst(node_tst* n) throw(error){
 
 // Partir funcio mergesort
 void easy_dial::partir(vector<phone> &v, vector<phone> &v2, int m) throw(){
-// Cost = O(m) v.size()/2
+// Cost = O(n)
   int i = v.size();
   while (i > m){
     v2.insert(v2.begin(), v.back());
@@ -172,7 +172,7 @@ void easy_dial::partir(vector<phone> &v, vector<phone> &v2, int m) throw(){
 
 // Fusionar funció mergesort
 void easy_dial::fusionar(vector<phone> &v, vector<phone> &v2) throw(){
-// Cost = O()
+// Cost = O(n)
   if (v.size() == 0) v = v2;
   if (v.size() > 0 and v2.size() > 0){
     vector<phone>::iterator it_v = v.begin();
@@ -211,7 +211,7 @@ void easy_dial::fusionar(vector<phone> &v, vector<phone> &v2) throw(){
 
 // Funció mergesort
 void easy_dial::ordena(vector<phone> &v, int n) throw(){
-// Cost = O()
+// Cost = O(n·log n)
   vector<phone> v2;
   if (n > 1){
     nat m = n / 2;
@@ -223,7 +223,7 @@ void easy_dial::ordena(vector<phone> &v, int n) throw(){
 }
 
 easy_dial::easy_dial(const call_registry& R) throw(error){
-// Cost = O()
+// Cost = O(n·log n)
   //Cridem el dump
   vector<phone> v;
   R.dump(v);
@@ -238,7 +238,7 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
 
   if(v.size() > 0){
     //ordenar vector per frequencia mes alta a mes baixa, mitjançant el mergesort
-    ordena(v,v.size());
+    ordena(v,v.size());                              //O(n·log n)
     _tlf_arrel = v[0].numero();
     // afegir cada element del vector al tst
     for(unsigned int i = 0; i<v.size(); ++i) insereix(v[i], arr);
@@ -395,7 +395,7 @@ nat easy_dial::num_telf() const throw(error){
 }
 
 void easy_dial::comencen(const string& pref, vector<string>& result) const throw(error){
-// Cost = O()
+// Cost = O(pref.lenght() * log(#n_lletres_abecedari))
 // El que hem fet és guardar un string amb el prefix, primer busquem el prefix i un cop la i es
 // igual a la mida del prefix busquem per esq, central i dret totes les paruales que hi han.
 
