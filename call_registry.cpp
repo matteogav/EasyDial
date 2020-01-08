@@ -161,10 +161,9 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 		for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
 	}
 	catch(error){
-		for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
-    	delete[] taula_aux;
-    	throw;
-    }
+    delete[] taula_aux;
+    throw;
+  }
 
 	// Copiar totes les llistes de cada element de la taula
 	if(this != &R){
@@ -202,7 +201,7 @@ call_registry& call_registry::operator=(const call_registry& R) throw(error){
 }
 
 call_registry::~call_registry() throw(){
-// Cost = O(_mida*n) 
+// Cost = O(_mida*n)
 	for (nat i = 0; i < _mida; ++i) esborrar(_taula[i]);
 	delete[] _taula;
 }
@@ -212,7 +211,7 @@ void call_registry::registra_trucada(nat num) throw(error){
 	float f_carrega = float(_n_elements)/float(_mida);
 	if(f_carrega > 0.75) rehash();				//cost O(n*l)
 
-	// Busquem posició de la taula i mirem si hi és	
+	// Busquem posició de la taula i mirem si hi és
 	nat k = hash(num);
 	node_hash* aux = consulta(num, k);			//cost O(hash + elements sequencia)
 
@@ -354,7 +353,6 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 			for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
 		}
 		catch(error){
-			for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
     	delete[] taula_aux;
     	throw;
     }
@@ -368,6 +366,7 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 						taula_aux[j] = new node_hash(aux->_phone, taula_aux[j]);
 					}
 					catch (error){
+						for(nat i=0; i < _mida; ++i) esborrar(taula_aux[i]);
 						delete taula_aux[j];
 						throw;
 					}
@@ -402,7 +401,7 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 				if ((taula_aux[i]->_phone).nom() != "") V.push_back(taula_aux[i]->_phone);
 			}
 		}
-	for (nat i = 0; i < _mida; ++i) esborrar(taula_aux[i]);
-	delete[] taula_aux;
+		for (nat i = 0; i < _mida; ++i) esborrar(taula_aux[i]);
+		delete[] taula_aux;
 	}
 }
