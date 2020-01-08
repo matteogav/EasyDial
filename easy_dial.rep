@@ -36,10 +36,12 @@ hem escollit la millor estructura quant a costos per poder fer aquestes 3 funcio
 lletres de més petita a més gran el cost de la cerca de la següent o anterior lletra és, en el pitjor dels casos,
 de 24 moviments esquerra o dreta.
 
-insereix(const phone& P, bool &arr, node_tst* &a, nat &freq, nat &numerad):
-Aquesta funció el que fa és:
+insereix(const phone& P, bool &arr):
+Aquesta funció el que fa és: Rep un booleà que indica si és l'arrel del TST o no, i rep també objecte del tipus phone,
+descomposa la  informació que conté aquest objecte, per exemple, el telefon, el nom amb el caracter '\0' afegit, etc.
+Per així fer la crida al metode rinserix, que l'insereix al arbre.
 
-rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num, node_tst* aarreell):
+rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num):
 Aquesta funció el que fa és:
 
 esborra_tst(node_tst* n):
