@@ -9,15 +9,16 @@ void easy_dial::insereix(const phone& P, bool &arrel) throw(){
   string ant = "";
   string nom = P.nom();
   nat tlf = P.numero();
-  freq = P.frequencia();
+  nat freq = P.frequencia();
+  total_freq += freq;
   nat puls_num = 0;
   // Inserim al tst
-  a = rinsereix(a, i, s, nom, tlf, arrel, ant, a, freq, puls_num, a);
+  _arrel = rinsereix(_arrel, i, s, nom, tlf, arrel, ant, _arrel, freq, puls_num);
   // Sumem en el numerador el número de polsacions que s'han fet
-  numerad += puls_num;
+  numerador += puls_num;
 }
 
-easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res,const nat &freq, nat &puls_num, node_tst* aarreell) throw(error){
+easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res,const nat &freq, nat &puls_num) throw(error){
 // Cost = O()
   // Si el node es NULL creem un node nou.
   if(n == NULL){
@@ -35,7 +36,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
         m->nivell = 0;
         arrel = false;
         i++;
-        m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m, freq, puls_num, aarreell);
+        m->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m, freq, puls_num);
       }
       // Sinó afegim normal, maxFr el nom, antFr el anterior i el _tlf el número de telèfon
       else{
@@ -50,7 +51,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
           if (m->maxFr != "") puls_num = freq * m->nivell;
           nom = "";
           i++;
-          m ->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m, freq, puls_num, aarreell);
+          m ->_central = rinsereix(m->_central, i, s, nom, telef, arrel, ant_ant, m, freq, puls_num);
         }
       }
     }
@@ -64,27 +65,26 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
   // sinó tierm cap a la dreta.
   else{
     if (n->_lletra > s[i]){
-      n->_esq = rinsereix(n->_esq, i, s, nom, telef, arrel, n->antFr, n, freq, puls_num, aarreell);
+      n->_esq = rinsereix(n->_esq, i, s, nom, telef, arrel, n->antFr, n, freq, puls_num);
     }
     else if (n->_lletra < s[i]){
-      n->_dret = rinsereix(n->_dret, i, s, nom, telef, arrel, n->antFr, n, freq, puls_num, aarreell);
+      n->_dret = rinsereix(n->_dret, i, s, nom, telef, arrel, n->antFr, n, freq, puls_num);
     }
     // Si la lletra del node és igual mirem si maxFr ha estat emplenat o no.
     else {
-      // Si encara no ha estat emplenat, vol dir que fins aquest prefix trobarem el telèfon que estem inserint,
-      // maxFr = nom i tlf = número de telèfon.
+      // Encara no ha estat emplenat, vol dir que fins aquest prefix trobarem el telèfon que estem inserint, maxFr = nom i tlf = número de telèfon.
+      // I calculem el número de pulsacions si antFr != "".
       if(n->maxFr == ""){
         // Si estem arrel afegim com si fos nivell 1 perquè en la primera lletra que a més, coincideix amb la del arrel ja dóna un nom.
-        if (n == aarreell) n->nivell = 1;
+        if (n == _arrel) n->nivell = 1;
         n->maxFr = nom;
         n->_tlf = telef;
         nom = "";
-        // I calculem el número de pulsacions si antFr != "".
         if (n->antFr != "") puls_num = freq * n->nivell;
       }
       ant_ant = n->maxFr;
       i++;
-      n->_central = rinsereix(n->_central, i, s, nom, telef, arrel, ant_ant, n, freq, puls_num, aarreell);
+      n->_central = rinsereix(n->_central, i, s, nom, telef, arrel, ant_ant, n, freq, puls_num);
     }
     return n;
   }
@@ -235,19 +235,13 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
   es_buit = false;
   total_freq = 0.0;
   numerador = 0;
-  nat freq = 0, numerad = 0;
 
   if(v.size() > 0){
     //ordenar vector per frequencia mes alta a mes baixa, mitjançant el mergesort
     ordena(v,v.size());
     _tlf_arrel = v[0].numero();
     // afegir cada element del vector al tst
-    for(unsigned int i = 0; i<v.size(); ++i) {
-      insereix(v[i], arr, _arrel, freq, numerad);
-      // assignar al numerador i sumar el total de frequencies per la funcio longitud_mitjana()
-      numerador = numerad;
-      total_freq += freq;
-    }
+    for(unsigned int i = 0; i<v.size(); ++i) insereix(v[i], arr);
   }
   _pref_indef = true;   //el prefix en curs queda indefinit
 }
