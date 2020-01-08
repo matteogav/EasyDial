@@ -104,7 +104,7 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
       else if (pref[i] > n->_lletra) emplena_v(n->_dret, result, pref, i, aux);
     }
     // Quan tenim el prefix, busquem si es final de nom o no.
-    else if (i >= pref.size()){
+    else{
       // No és final de paraula, busco paraula més petita, per tant, cerca preordre, i afegeixo lletra a aux si _central no és NULL.
       if (n->_lletra != phone::ENDPREF){
         if (n->_esq != NULL) emplena_v(n->_esq, result, pref, i, aux);
@@ -117,7 +117,7 @@ void easy_dial::emplena_v(node_tst* n, vector<string>& result, const string& pre
         if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
       }
       // Si és final de nom, afegeix al vector result i continua buscant per node dret.
-      else if (n->_lletra == phone::ENDPREF){
+      else{
         result.push_back(aux);
         if (n->_dret != NULL) emplena_v(n->_dret, result, pref, i, aux);
       }
