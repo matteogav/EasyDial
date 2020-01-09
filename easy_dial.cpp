@@ -10,6 +10,7 @@ void easy_dial::insereix(const phone& P, bool &arrel) throw(){
   string nom = P.nom();
   nat tlf = P.numero();
   nat freq = P.frequencia();
+  // Sumem en el denominador el número de freqüència del telèfon
   total_freq += freq;
   nat puls_num = 0;
   // Inserim al tst
@@ -31,7 +32,7 @@ easy_dial::node_tst* easy_dial::rinsereix(node_tst* n, nat &i, string s, string 
         m->maxFr = ant_ant;
         m->antFr = nom;
         nom = "";
-        m->_tlf = telef;
+        _tlf_arrel = telef;
         m->_pare = NULL;
         m->nivell = 0;
         arrel = false;
@@ -239,7 +240,6 @@ easy_dial::easy_dial(const call_registry& R) throw(error){
   if(v.size() > 0){
     //ordenar vector per frequencia mes alta a mes baixa, mitjançant el mergesort
     ordena(v,v.size());                              //O(n·log n)
-    _tlf_arrel = v[0].numero();
     // afegir cada element del vector al tst
     for(unsigned int i = 0; i<v.size(); ++i) insereix(v[i], arr);
   }

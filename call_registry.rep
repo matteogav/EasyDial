@@ -24,6 +24,11 @@ de fer una estructura BST, però al tenir millors costs amb les taules de disper
 aquesta opció.   
 Vam acabar escollint taules de dispersió amb sinònims encadenats indirectes perquè en les taules de
 dispersió de sondeig lineal, la nostre primera opció, hi havia costos que no ens eren eficients.
+Els atributs del node contenen un telefon sencer, i un node que indica següent.
+Els atributs de la classe són:
+	- _taula que és la taula de dispersió.
+	- _mida indica la mida de la taula en el moment actual.
+	- _n_elements que és el número d'elements que conté la nostre taula de disperció en aquell moment.
 
 - funció hash():
 Aquesta funció el que fa és:

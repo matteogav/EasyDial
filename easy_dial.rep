@@ -35,15 +35,34 @@ d'arbre ternari de cerca, TST. Com que seguent(char), anterior() i num_tlef() ne
 hem escollit la millor estructura quant a costos per poder fer aquestes 3 funcions. En tenir-ho ordenat per
 lletres de més petita a més gran el cost de la cerca de la següent o anterior lletra és, en el pitjor dels casos,
 de 24 moviments esquerra o dreta.
+Fem serivir els atributs del node_hash bàsics, fill esquerra, fill central, fill dret i pare per tirar enrere amb
+la funció anterior i la lletra que guardem, a més a més en el node_hash guardem el nivell en el que es troba el
+número de telefon i maxFr és el nom del contacte que trobem primer si seguim aquest camí i antFr és el nom del "pare".
+com atributs de la classe tenim:
+  - _arrel que és l'arrel del TST.
+  - total_freq és el denominador de la funció longitud_mitjana i suma totes les freqüències.
+  - numerador és el numerador de la funció longitud_mitjana i suma la multiplicació entre la freqüència del telefon
+i el nombre de cops que ha pulsat la tecla(nivell).
+  - _tlf_arrel indica el nuúmero de telefon del contacte més freqüent.
+  - _pref_n indica el node on es troba el prefix actual.
+  - _pref_indef indica si el prefix es indefinit o no.
+  - null_pref_n indica si fent següent hem anat a un node NULL i per tant, hem deixat el _pref_n on estava.
+  - es_buit indica si en següent hem anat a un node maxFr buit. per la següent iteració vigilar.
+  - _prefix conté el prefix actual.
 
 insereix(const phone& P, bool &arr):
-Aquesta funció el que fa és: Rep un booleà que indica si és l'arrel del TST o no, i rep també
+Aquesta funció el que fa és: Rep un booleà que indica si és l'arrel del TST o no, que l'utilitzem per rinsereix, i rep també
 objecte del tipus phone, descomposa la informació que conté aquest objecte, per exemple, el telefon,
-el nom amb el caracter '\0' afegit, etc. Per així fer la crida al metode rinserix, que l'insereix al arbre.
+el nom amb el caracter '\0' afegit, etc. Per així fer la crida al metode rinserix, que l'insereix al arbre. També, suma la
+freqüéncia del número i suma també el resultat que dóna de número de pulsacions per fer el càlcul de longitud mitjana.
 
 rinsereix(node_tst* n, nat &i, string s, string &nom, const nat &telef, bool &arrel, string ant_ant, node_tst* res, const nat &freq, nat &puls_num):
 Aquesta funció el que fa és: Si el node n no existeix a l'arbre l'afegeix amb la lletra i els seus
-altres camps corresponents, si ja exisitia segueix recorrent.
+altres camps corresponents, però si el que afegeix és _arrel el camp maxFr no l'afegeix sinó que
+guardem el telefon en un atribut _tlf_arrel i el nom en antFr atribut del node_hash, si ja exisitia
+mirem que maxFr no sigui buit, si ho és i afegim el nom en maxFr i posem el nom a "" i afegim el _tlf
+també i segueix recorrent. Sempre mirem els nivells que ha baixat i quan canvia el maxFr també calcula el número de
+pulsacions.
 
 esborra_tst(node_tst* n):
 Aquesta funció el que fa és: Esborra de manera recursiva el TST, a partir del node donat.
