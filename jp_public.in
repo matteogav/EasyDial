@@ -7,21 +7,21 @@
 ##! JOC DE PROVES DE PHONE
 ##!-----------------------------------------------------------
 ##!
-load jp_public/jp_public_phone.in
+load jp_public_phone.in
 ##!
 ##!
 ##!-----------------------------------------------------------
 ##! JOC DE PROVES DE CALL_REGISTRY
 ##!-----------------------------------------------------------
 ##!
-load jp_public/jp_public_call_registry.in
+load jp_public_call_registry.in
 ##!
 ##!
 ##!-----------------------------------------------------------
 ##! JOC DE PROVES DE EASY_DIAL
 ##!-----------------------------------------------------------
 ##!
-load jp_public/jp_public_easy_dial.in
+load jp_public_easy_dial.in
 ##!
 ##!
 ##!

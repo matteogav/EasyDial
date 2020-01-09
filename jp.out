@@ -7,7 +7,7 @@
 ###! JOC DE PROVES DE PHONE
 ###!-----------------------------------------------------------
 ###!
-#load jp_public/jp_public_phone.in
+#load jp_public_phone.in
 ###!----------------------------------------------
 ###!                                              
 ###! CLASSE PHONE
@@ -370,7 +370,7 @@ true
 ###! JOC DE PROVES DE CALL_REGISTRY
 ###!-----------------------------------------------------------
 ###!
-#load jp_public/jp_public_call_registry.in
+#load jp_public_call_registry.in
 ###!-----------------------------------------
 ###!
 ###! MODUL CALL_REGISTRY
@@ -4257,7 +4257,7 @@ false
 ###! JOC DE PROVES DE EASY_DIAL
 ###!-----------------------------------------------------------
 ###!
-#load jp_public/jp_public_easy_dial.in
+#load jp_public_easy_dial.in
 ###!--------------------------
 ###! JOC DE PROVES: easy_dial
 ###!--------------------------

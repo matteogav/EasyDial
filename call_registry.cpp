@@ -245,7 +245,7 @@ void call_registry::assigna_nom(nat num, const string& name) throw(error){
 		phone modificat(num, name, aux->_phone.frequencia());
 		(aux->_phone) = modificat;
 	}
-	// Si aux == NULL vol dir que no l'hem robta i per tant, afegim un nou telefon amb freq = 0.
+	// Si aux == NULL vol dir que no l'hem trobat i per tant, afegim un nou telefon amb freq = 0.
 	else {
 		phone nou_p(num, name, 0);
 		try{
@@ -353,9 +353,9 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 			for(nat i=0; i < _mida ; ++i) taula_aux[i] = NULL;
 		}
 		catch(error){
-    	delete[] taula_aux;
-    	throw;
-    }
+    		delete[] taula_aux;
+    		throw;
+    	}
 
 		for (nat i = 0; i < _mida; ++i){			//cost O(_mida * mº elements de la sequencia)
 			if (_taula[i] != NULL){
@@ -390,7 +390,11 @@ void call_registry::dump(vector<phone>& V) const throw(error){
 						if(usr != "" and usr == x->_phone.nom()) trobat = true;
 						x = x->_seg;
 					}
-					if (trobat) throw error(ErrNomRepetit);
+					if (trobat) {
+						for (nat i = 0; i < _mida; ++i) esborrar(taula_aux[i]);
+						delete[] taula_aux;
+						throw error(ErrNomRepetit);
+					}
 					else {
 						if(usr != "") V.push_back(aux->_phone);
 					}

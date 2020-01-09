@@ -31,7 +31,7 @@ Aquesta funció el que fa és:
 - funció hash_c():
 Aquesta funció el que fa és: Calcula per el nom que se li dóna per paràmetre un número de la taula de 
 dispersió, fent així que si hi ha dos noms iguals els posa en el mateix lloc i així poder executar bé
-la funció de dump.
+a la funció de dump.
 
 - funció rehash():
 Aquesta funció el que fa és: Duplicar la mida de la taula actual i reordenar els elements de la taula
